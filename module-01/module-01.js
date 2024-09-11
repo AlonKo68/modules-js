@@ -252,21 +252,25 @@
 // console.log(!!undefined);  //false
 // console.log(typeof(!undefined));  //boolean
 
-// function makeTransaction (quantity, pricePerDroid) {
+// function makeTransaction(quantity, pricePerDroid) {
 //   const totalPrice = quantity * pricePerDroid;
-//   return `You ordered ${quantity} droids worth ${totalPrice} credits!`;;
+//   return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
 // }
 // console.log(makeTransaction(5, 3000));
 // console.log(makeTransaction(10, 500));
 // console.log(makeTransaction(4, 700));
 
-// const makeTransaction = function (quantity, pricePerDroid) {
-//     const totalPrice = quantity * pricePerDroid;
-//     return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-// }
-// console.log(makeTransaction(5, 3000));
 // makeTransaction(3, 3000);
 // console.log(makeTransaction);
+
+// const makeTransaction = (quantity, pricePerDroid) => {
+//   return `You ordered ${quantity} droids worth ${
+//     quantity * pricePerDroid
+//   } credits!`;
+// };
+// console.log(makeTransaction(5, 3000));
+// console.log(makeTransaction(10, 500));
+// console.log(makeTransaction(4, 700));
 
 /*                              
                                             module M1 mentor     */
