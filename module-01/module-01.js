@@ -272,7 +272,7 @@
 // console.log(makeTransaction(10, 500));
 // console.log(makeTransaction(4, 700));
 
-/*                              
+/*
                                             module M1 mentor     */
 
 /*1.
@@ -304,7 +304,7 @@
 // console.log(getTotalCost(cherry, cherryQuantity, cherryPrice));
 
 /*2.
-Напиши скрипт, який переведе значення totalMinutes (кількість хвилин) в рядок у форматі 
+Напиши скрипт, який переведе значення totalMinutes (кількість хвилин) в рядок у форматі
 годин та хвилинHH:MM.  */
 
 // function getTime(minutes) {
@@ -443,12 +443,12 @@
 // const value4 = 100;
 // console.log(Math.max(value1, value2, value3, value4));  //10
 
-let value;
-value = 0.1 + 0.2;
-console.log(value.toFixed(2)); //0.30
-console.log(value.toFixed(1)); //0.3
+// let value;
+// value = 0.1 + 0.2;
+// console.log(value.toFixed(2)); //0.30
+// console.log(value.toFixed(1)); //0.3
 
-const add = function (val1, val2) {
-  console.log('val1', val1); //val1 10
-};
-add(10, 20);
+// const add = function (val1, val2) {
+//   console.log('val1', val1); //val1 10
+// };
+// add(10, 20);

@@ -1,6 +1,6 @@
 //                        1.       об'єкт
 
-//            Створення об'єкта
+//         1.   Створення об'єкта
 
 // const apartment = {
 //   imgUrl: 'https://via.placeholder.com/640x480',
@@ -8,23 +8,12 @@
 //   rating: 4,
 //   price: 2153,
 //   tags: ['premium', 'promoted', 'top'],
+//   owner: { name: 'Henry', phone: '982-126-1588', email: 'henry.carter@aptmail.com', },
 // };
-// console.log(apartament);
+// console.log(apartament);  //{....}
 
-//     Вкладені властивості i Доступ до властивостей через крапку
+//        2. & 3.  Вкладені властивості i Доступ до властивостей через крапку
 
-// const apartment = {
-//   imgUrl: 'https://via.placeholder.com/640x480',
-//   descr: 'Spacious apartment in the city center',
-//   rating: 4,
-//   price: 2153,
-//   tags: ['premium', 'promoted', 'top'],
-//   owner: {
-//     name: 'Henry',
-//     phone: '982-126-1588',
-//     email: 'henry.carter@aptmail.com',
-//   },
-// };
 // const apartamentImgUrl = apartment.imgUrl;
 // console.log(apartamentImgUrl); //'https://via.placeholder.com/640x480'
 
@@ -34,19 +23,23 @@
 
 // const ownerName = apartment.owner.name;
 // console.log(ownerName); //Henry
+
 // const ownerPhone = apartment.owner.phone; //'982-126-1588'
 // const ownerEmail = apartment.owner.email; //'henry.carter@aptmail.com'
 
-//           Доступ до вкладених властивостей
+//        4.    Доступ до вкладених властивостей
 
 // const numberOfTags = apartment.tags.length;
 // console.log(numberOfTags); //3
+
 // const firstTag = apartment.tags[0];
 // console.log(firstTag); //premium
+
 // const lastTag = apartment.tags[apartment.tags.length - 1]; //'top'
 // console.log(lastTag);
 
-//     Доступ до властивостей через квадратні дужки
+//       5.    Доступ до властивостей через квадратні дужки
+
 // console.log(apartment.price); //2153
 // console.log(apartment['price']); //2153
 
@@ -55,32 +48,26 @@
 // // but
 // console.log(apartment[propKey]); //4
 
+//        6.    Зміна значення властивостей
+
 // const apartment = {
 //   imgUrl: 'https://via.placeholder.com/640x480',
 //   descr: 'Spacious apartment in the city center',
 //   rating: 4,
 //   price: 2153,
 //   tags: ['premium', 'promoted', 'top'],
-//   owner: {
-//     name: 'Henry',
-//     phone: '982-126-1588',
-//     email: 'henry.carter@aptmail.com',
-//   },
-//   location: {
-//     country: 'Jamaica',
-//     city: 'Kingston',
-//   },
+//   owner: { name: 'Henry', phone: '982-126-1588', email: 'henry.carter@aptmail.com', },
+//   location: { country: 'Jamaica', city: 'Kingston' },
 // };
-//          Зміна значення властивостей
 
 // apartment.rating = 4.7;
-// console.log(apartment.rating); //4.7
+// console.log(apartment.rating); //4  => 4.7
 // console.log((apartment.price = 5000)); //5000
 
 // apartment.tags.push('trusted');
 // console.log(apartment.tags); //['premium', 'promoted', 'top', 'trusted']
 
-//      Додавання властивостей
+//      7.     Додавання властивостей
 
 // apartment.area = 60;
 // apartment.rooms = 3;
@@ -97,7 +84,7 @@
 // console.log(user.name); // "Henry Sibola"
 // console.log(user.age); // 25
 
-//         Обчислювальні властивості
+//      8.   Обчислювальні властивості
 
 // const propName = "name";
 // const user = {
@@ -106,79 +93,75 @@
 // };
 // console.log(user.name); // "Henry Sibola"
 
-//                      2.   Перебір об'єкта
+//                      2.        Перебір об'єкта
 
-//         Цикл for...in
+//      1.   Цикл for...in
 
 // const book = {
-//   title: 'The Last Kingdom',
-//   author: 'Bernard Cornwell',
-//   genres: ['historical prose', 'adventure'],
-//   rating: 8.38,
+//   title: 'The Last Kingdom', author: 'Bernard Cornwell',
+//   genres: ['historical prose', 'adventure'], rating: 8.38,
 // };
 // for (const key in book) {
-//   console.log(key);
+//   console.log(key);  //title // author  //genres  //rating
 // }
 
-/* 2.1 
-Перебери об'єкт apartment, використовуючи цикл for...in, і запиши в масив keys всі його ключі, а в 
+/* 2.1
+Перебери об'єкт apartment, використовуючи цикл for...in, і запиши в масив keys всі його ключі, а в
 масив values всі значення його властивостей.  */
 
-// const apartment = {
-//   descr: 'Spacious apartment in the city center',
-//   rating: 4,
-//   price: 2153,
-// };
+// const apartment = { descr: 'Spacious apartment in the city center', rating: 4, price: 2153, };
 
 // const keys = [];
-// const values = [apartment.descr, apartment.rating, apartment.price];
-// console.log(values);
 // for (const key in apartment) {
 //   keys.push(key);
 // }
-// console.log(keys);  //['descr', 'rating', 'price']
+// console.log(keys);  //['descr', 'rating', 'price'];
 
-//     Метод Object.keys()
+//       2.    Метод Object.keys()
 
 // const keys = Object.keys(apartment);
 // console.log(keys);
 
-// const book = {
-//   author: 'Bernard Cornwell',
-//   genres: ['historical prose', 'adventure'],
-//   rating: 8.38,
-// };
+// const book = { author: 'Bernard Cornwell', genres: ['historical prose', 'adventure'], rating: 8.38, };
+
 // const keys = Object.keys(book);
 // // console.log(keys);  //['author', 'denres', 'rating']
+
 // for (const key of keys) {
 //   console.log(key); //'author'  //denres'  //'rating'
 //   console.log(book[key]); //'Bernard Cornwell'  //['historical prose', 'adventure']  //8.38
 // }
 
 /* 2.2.1
-Перебери об'єкт apartment, використовуючи метод Object.keys() і цикл for...of. Запиши у змінну keys 
-масив ключів властивостей об'єкта apartment, і додай в масив values всі значення його 
+Перебери об'єкт apartment, використовуючи метод Object.keys() і цикл for...of. Запиши у змінну keys
+масив ключів властивостей об'єкта apartment, і додай в масив values всі значення його
 властивостей. */
+// const apartment = { descr: 'Spacious apartment in the city center', rating: 4, price: 2153, };
 
-// const apartment = {
-//   descr: 'Spacious apartment in the city center',
-//   rating: 4,
-//   price: 2153,
-// };
-// const values = [];
 // const keys = Object.keys(apartment);
-// console.log(keys);
+// console.log(keys); //['descr', 'rating', 'price']
+
+// const values = [];
 // for (const key of keys) {
 //   values.push(apartment[key]);
 // }
+// console.log(values); //['Spacious apartment in the city center', 4, 2153]
+
+// const values = Object.values(apartment);
 // console.log(values);
 
 /* 2.2.2
-Виконай рефакторинг функції countProps(object), замінивши перебір ключів за допомогою циклу for…in 
-на метод Object.keys() для отримання масиву властивостей. Функція має повернути кількість 
+Виконай рефакторинг функції countProps(object), замінивши перебір ключів за допомогою циклу for…in
+на метод Object.keys() для отримання масиву властивостей. Функція має повернути кількість
 властивостей в об'єкті object. */
 
 // function countProps(object) {
+//   // let propCount = 0;
+//   // for (const key in object) {
+//   //   propCount += 1;
+//   // }
+//   // return propCount;
+
 //   //   let propCount = 0;
 //   //   for (const key in object) {
 //   //     if (object.hasOwnProperty(key)) {
@@ -187,43 +170,26 @@
 //   //   }
 //   //   return propCount;
 
-//   //   const keys = Object.keys(object);
-//   //   console.log(keys);
-//   //   return keys.length;
-
-//   let propCount = 0;
-//   for (const key in object) {
-//     propCount += 1;
-//   }
-//   return propCount;
+//   const keys = Object.keys(object);
+//   console.log(keys);
+//   return keys.length;
 // }
 // console.log(countProps({})); //0
 // console.log(countProps({ name: 'Mango', age: 2 })); //2
 // console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); //3
 
-//            Метод Object.values()
-// 3.1
-// const apartment = {
-//   descr: 'Spacious apartment in the city center',
-//   rating: 4,
-//   price: 2153,
-// };
+//        3.    Метод Object.values()
+// 1.3.1
+// const apartment = { descr: 'Spacious apartment in the city center', rating: 4, price: 2153, };
+
 // const keys = Object.keys(apartment);
 // const values = Object.values(apartment);
-// console.log(keys); //['author'  //denres'  //'rating']
+// console.log(keys); //['author', denres', 'rating']
 // console.log(values); //['Spacious apartment in the city center', 4, 2153]
 
-/* 3.2
-Функція countTotalSalary(salaries) приймає об'єкт зарплат (salaries) в якості параметра. Кожна 
-властивість об'єкта salaries — це ключ, що містить ім'я співробітника, та значення - його відповідна 
-зарплатня. Доповни код функції countTotalSalary(salaries) так, щоб вона повертала загальну суму 
-зарплат всіх співробітників.
-Поради:
-Ініціалізуй змінну totalSalary зі значенням 0, яка буде відповідати за загальну суму зарплат усіх 
-співробітників
-Використай метод Object.values() для отримання значень (зарплат) з об'єкта salaries
-Пройдись по отриманих значеннях за допомогою циклу та додай кожне значення до змінної totalSalary.
-Поверни totalSalary як результат */
+/* 1.3.2
+Доповни код функції countTotalSalary(salaries) так, щоб вона повертала загальну суму зарплат всіх
+співробітників.  */
 
 // function countTotalSalary(salaries) {
 //   let totalSalary = 0;
@@ -237,7 +203,7 @@
 // console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 })); //330
 // console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 })); //400
 
-//             3.   Масив об’єктів
+//             3.         Масив об'єктів
 
 // const colors = [
 //   { hex: '#f44336', rgb: '244,67,54' },
@@ -257,8 +223,8 @@
 //    Пошук об'єкта за значенням властивості
 
 /* 3.1
-Доповни код функції так, щоб вона шукала об'єкт продукту з певним ім'ям (властивість name) в масиві 
-products і повертала його ціну (властивість price). Якщо продукт з такою назвою не знайдений, функція 
+Доповни код функції так, щоб вона шукала об'єкт продукту з певним ім'ям (властивість name) в масиві
+products і повертала його ціну (властивість price). Якщо продукт з такою назвою не знайдений, функція
 повинна повертати null. */
 
 // function getProductPrice(productName) {
@@ -285,11 +251,7 @@ products і повертала його ціну (властивість price).
 // const books = [
 //   { title: 'The Last Kingdom', author: 'Bernard Cornwell', rating: 8.2 },
 //   { title: 'Beside Still Waters', author: 'Robert Sheckley', rating: 9 },
-//   {
-//     title: 'The Dream of a Ridiculous Man',
-//     author: 'Fyodor Dostoevsky',
-//     rating: 6.8,
-//   },
+//   { title: 'The Dream of a Ridiculous Man', author: 'Fyodor Dostoevsky', rating: 6.8, },
 // ];
 // const titles = [];
 // for (const book of books) {
@@ -305,10 +267,10 @@ products і повертала його ціну (властивість price).
 // const averageRating = totalRating / books.length;
 // console.log(averageRating); // 8
 
-/* 3.2 
-Напиши функцію getAllPropValues(propName), яка приймає один параметр propName - ім'я (ключ) 
-властивості. Функція повинна повернути масив усіх значень властивості з таким ім'ям з кожного 
-об'єкта в масиві products. Якщо в об'єктах відсутні властивості з таким ім'ям, функція повинна 
+/* 3.2
+Напиши функцію getAllPropValues(propName), яка приймає один параметр propName - ім'я (ключ)
+властивості. Функція повинна повернути масив усіх значень властивості з таким ім'ям з кожного
+об'єкта в масиві products. Якщо в об'єктах відсутні властивості з таким ім'ям, функція повинна
 повернути порожній масив.  */
 
 // function getAllPropValues(propName) {
@@ -332,8 +294,8 @@ products і повертала його ціну (властивість price).
 // console.log(getAllPropValues('category')); //[]
 
 /* 3.2.2    "Вартість товару"
-Доповни код функції так, щоб вона повертала загальну вартість (ціна * кількість) товару з таким 
-ім'ям з масиву products. Якщо продукту з такою назвою немає, то функція повинна повертати рядок 
+Доповни код функції так, щоб вона повертала загальну вартість (ціна * кількість) товару з таким
+ім'ям з масиву products. Якщо продукту з такою назвою немає, то функція повинна повертати рядок
 "Product <productName> not found!" , де <productName> — це ім'я товару.  */
 
 // function calculateTotalPrice(productName) {
@@ -359,15 +321,15 @@ products і повертала його ціну (властивість price).
 //                  Методи об'єкта
 
 // const bookShelf = {
-//   books: ['The Last Kingdom', 'Dream Guardian'],
-//   // Це метод об'єкта
-//   getBooks() {
-//     return 'Returning all books';
-//   },
-//   // Це метод об'єкта
-//   addBook(bookName) {
-//     return `Adding book ${bookName}`;
-//   },
+//     books: ['The Last Kingdom', 'Dream Guardian'],
+//     // Це метод об'єкта
+//     getBooks() {
+//         return 'Returning all books';
+//     },
+//     // Це метод об'єкта
+//     addBook(bookName) {
+//         return `Adding book ${bookName}`;
+//     },
 // };
 // // Виклики методів
 // bookShelf.getBooks();
@@ -378,7 +340,7 @@ products і повертала його ціну (властивість price).
 // console.log(bookShelf.addBook('New book 2')); //"Adding book New book 2"
 
 /* 4.
-До нас звернулася власниця крамниці зілля «У старої жаби» і замовила програму для ведення інвентарю. 
+До нас звернулася власниця крамниці зілля «У старої жаби» і замовила програму для ведення інвентарю.
 Програма має додавати, видаляти, шукати та оновлювати зілля */
 
 // const atTheOldToad = {
@@ -400,23 +362,22 @@ products і повертала його ціну (властивість price).
 //        Доступ до властивостей об'єкта
 
 // const bookShelf = {
-//   books: ['The Last Kingdom', 'The Mist'],
-//   getBooks() {
-//     console.log(this); // {books: ["The Last Kingdom", "The Mist"], getBooks: f}
-//   },
+//     books: ['The Last Kingdom', 'The Mist'],
+//     getBooks() {
+//         console.log(this); // {books: ["The Last Kingdom", "The Mist"], getBooks: f}
+//     },
 // };
-
 // bookShelf.getBooks();
 
 //  this
 
 // const bookShelf = {
-//   books: ['The Last Kingdom', 'The Mist'],
-//   getBooks() {
-//     return this.books;
-//   },
+//     books: ['The Last Kingdom', 'The Mist'],
+//     getBooks(book) {
+//         console.log(this.book);
+//         return this.books;
+//     },
 // };
-
 // console.log(bookShelf.getBooks()); // ['The Last Kingdom', 'The Mist']
 
 //4.1
@@ -430,9 +391,7 @@ products і повертала його ціну (властивість price).
 
 //        Зміна за посиланням
 
-// const bookShelf = {
-//   books: ['The Last Kingdom'],
-// };
+// const bookShelf = { books: ['The Last Kingdom'], };
 // bookShelf.books.push('The Mist');
 // console.log(bookShelf.books); // ["The Last Kingdom", "The Mist"]
 
@@ -563,7 +522,7 @@ products і повертала його ціну (властивість price).
 // console.log(bookShelf.books);
 
 /* 4.4.
-Доповни метод updatePotionName(oldName, newName) таким чином, щоб він оновлював назву зілля з oldName на 
+Доповни метод updatePotionName(oldName, newName) таким чином, щоб він оновлював назву зілля з oldName на
 newName в масиві зілля у властивості potions.  */
 // const atTheOldToad = {
 //   potions: [
@@ -590,7 +549,7 @@ newName в масиві зілля у властивості potions.  */
 //              Залишкові параметри   ...rest
 
 /* 5.1
-Використовуючи синтаксис залишкових параметрів, доповни код функції add() так, щоб вона приймала будь-яку 
+Використовуючи синтаксис залишкових параметрів, доповни код функції add() так, щоб вона приймала будь-яку
 кількість аргументів у параметр args і повертала їхню суму.  */
 // function add(...args) {
 //   //   console.log(args);
@@ -608,7 +567,7 @@ newName в масиві зілля у властивості potions.  */
 
 /* 5.2.
 Функція addOverNum() приймає довільну кількість аргументів чисел.
-Доповни код функції таким чином, щоб вона обчислювала суму тільки тих аргументів, які більші за задане 
+Доповни код функції таким чином, щоб вона обчислювала суму тільки тих аргументів, які більші за задане
 число. Це число завжди буде передано першим аргументом.  */
 // function addOverNum(value, ...args) {
 //   let sum = 0;
@@ -692,26 +651,15 @@ newName в масиві зілля у властивості potions.  */
 // 5.5.
 // Доповни код таким чином, щоб у змінній finalSettings утворився об'єкт фінальних налаштувань тесту.
 // const defaultSettings = {
-//   theme: 'light',
-//   public: true,
-//   withPassword: false,
-//   minNumberOfQuestions: 10,
-//   timePerQuestion: 60,
+//   theme: 'light', public: true, withPassword: false, minNumberOfQuestions: 10, timePerQuestion: 60,
 // };
-// const overrideSettings = {
-//   public: false,
-//   withPassword: true,
-//   timePerQuestion: 30,
-// };
+// const overrideSettings = { public: false, withPassword: true, timePerQuestion: 30, };
 
 // const finalSettings = { ...defaultSettings, ...overrideSettings };
 // console.log(finalSettings);
 
-/*************              ptactice m4-1 mentor               ****************/
-// const userA = {
-//   username: 'Mango',
-//   age: 20,
-// };
+/*************              practice m4-1 mentor               ****************/
+// const userA = { username: 'Mango', age: 20 };
 // const userB = userA;
 // console.log(userA === userB);
 // userB.age = 30;
@@ -719,28 +667,12 @@ newName в масиві зілля у властивості potions.  */
 // console.log(userA.age, userB.age);
 
 /**************                    Об'єкт        ******************/
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: true,
-//     css: true,
-//     react: false,
-//   },
-//   case2: 'some value',
-// };
+// const user = { name: 'Alice', skills: { html: true, css: true, react: false }, case2: 'some value', };
 // console.log(user); //{    }
 
 //                          Звернення до властивостей об'єкта //
 
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: true,
-//     css: true,
-//     react: false,
-//   },
-//   case2: 'some value',
-// };
+// const user = { name: 'Alice', skills: { html: true, css: true, react: false }, case2: 'some value', };
 
 // console.log(user.name); //Alice
 // console.log(user['name']); //Alice
@@ -768,14 +700,7 @@ newName в масиві зілля у властивості potions.  */
 // console.log(userA.general); //{}
 
 // ****************Зміна значення властивості**************** \\
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
+// const user = { name: 'Alice', skills: { html: false, css: true, react: false }, };
 // user.skills.css = false;
 
 // user['skills']['css'] = false;
@@ -793,14 +718,9 @@ newName в масиві зілля у властивості potions.  */
 
 // ****************Object.freeze**************** \\
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
+
+// const user = { name: 'Alice', skills: { html: false, css: true, react: false }, };
+
 // Object.freeze(user);
 // user.name = 'Kate';
 // user.city = 'Lviv';
@@ -812,14 +732,10 @@ newName в масиві зілля у властивості potions.  */
 // console.log(user);
 
 // *************       Методи об'єкта       **************** \\
-//function declaration
+// function declaration
 // const user = {
 //   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
+//   skills: { html: false,css: true,react: false, },
 //   sayHello(city) {
 //     console.log(city); //Lviv
 //     console.log(`Hello my name ${this.name}`); //Hello my name Alice
@@ -830,11 +746,7 @@ newName в масиві зілля у властивості potions.  */
 // function expt
 // const user = {
 //   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
+//   skills: { html: false, css: true, react: false, },
 //   sayHello: function (city) {
 //     console.log(city);
 //     console.log(`Hello my name ${this.name}`); //Hello my name Alice
@@ -854,22 +766,14 @@ newName в масиві зілля у властивості potions.  */
 // console.log(sayHello); //тіло ф-іі
 // const user = {
 //   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
+//   skills: { html: false, css: true, react: false, },
 //   sayHello: sayHello,
 // };
 // user.sayHello('lviv');
 
 // const user = {
 //   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
+//   skills: { html: false, css: true, react: false },
 //   sayHello(city) {
 //     console.log(this); //object
 //     return `Hello my name ${this.name}`;
@@ -878,27 +782,13 @@ newName в масиві зілля у властивості potions.  */
 // document.querySelector('h1').textContent = user.sayHello('Lviv');
 
 // ****************      Цикл for...in     **************** \\
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
+// const user = { name: 'Alice', skills: { html: false, css: true, react: false, }, };
+
 // for (const key in user) {
 //   //   console.log(key);  //name //skills
 //   console.log(key, user[key]);
 // }
 
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
 // const userA = Object.create(user);
 // userA.city = 'Lviv';
 // console.log(userA);
@@ -909,25 +799,11 @@ newName в масиві зілля у властивості potions.  */
 // }
 
 // *************       Метод Object.keys()       **************** \\
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
+// const user = { name: 'Alice', kills: { html: false, css: true, react: false, }, };
+
 // const keys = Object.keys(user);
 // console.log(keys); //['name', 'skills']
 
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
 // const userA = Object.create(user);
 // userA.city = 'Lviv';
 // const keys = Object.keys(userA);
@@ -939,15 +815,8 @@ newName в масиві зілля у властивості potions.  */
 // console.log(keys); //['name', 'skills']
 
 // ****************Метод Object.values()**************** \\
+// const user = { name: 'Alice', kills: { html: false, css: true, react: false, }, };
 
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
 // const values = Object.values(user);
 // console.log(values);  // ['Alice', {., ., .}]
 
@@ -957,15 +826,8 @@ newName в масиві зілля у властивості potions.  */
 // console.log(values); //[false, true, false]
 
 // ****************Метод Object.entries()**************** \\
+// const user = { name: 'Alice', kills: { html: false, css: true, react: false, }, };
 
-// const user = {
-//   name: 'Alice',
-//   skills: {
-//     html: false,
-//     css: true,
-//     react: false,
-//   },
-// };
 // const entries = Object.entries(user);
 // console.log(entries);
 
@@ -977,39 +839,21 @@ newName в масиві зілля у властивості potions.  */
 //   console.log(this.price);
 // }
 
-// const productA = {
-//   name: 'Cherry',
-//   price: 100,
-//   showPrice: foo,
-// };
+// const productA = { name: 'Cherry', price: 100, showPrice: foo, };
+// const productB = { name: 'banana', price: 60, showPrice: foo, };
+// const productC = { name: 'apple', price: 30, showPrice: foo };
 
-// const productB = {
-//   name: 'banana',
-//   price: 60,
-//   showPrice: foo,
-// };
-
-// const productC = {
-//   name: 'apple',
-//   price: 30,
-//   showPrice: foo,
-// };
 // productA.showPrice();
 // productB.showPrice();
 // productC.showPrice();
 
-// ****************Практика**************** \\
+// ****************     Практика     *************** \\
 //Task - 1
 // Створи функцію яка буде приймати 3 параметри та формувати об'єкт покупки:
 // 1 Назва продукту, 2 Кількість одиниць, 3 Ціна за 1 одиницю товару
 // Функція має повертати сформований об'єкт з ключами name, price, quantity, totalPrice.
 // function createBasket(product, quantity, price) {
-//   return {
-//     product,
-//     quantity,
-//     price,
-//     totalPrice: price * quantity,
-//   };
+//     return { product, quantity, price, totalPrice: price * quantity, };
 // }
 // console.log(createBasket('pizza', 3, 120)); //{product:'pizza', price: 120, quantity: 3, totalPrice: 360}
 // console.log(createBasket('aplle', 13, 1200));
@@ -1019,89 +863,71 @@ newName в масиві зілля у властивості potions.  */
 // користувачів де ключ це ім'я користувача, а значення це час оренди у хвилинах.
 // Функція повертає рядок з інформацією про те скільки було користувачів та який середній час оренди
 // комп'ютер.
-
-// const players = {
-//   Den: 60,
-//   Kate: 130,
-//   William: 45,
-//   Matthew: 120,
-//   Ethan: 40,
-//   David: 55,
-// };
+// const players = { Den: 60, Kate: 130, William: 45, Matthew: 120, Ethan: 40, David: 55, };
+// // const playersArr = Object.keys(players);
+// // console.log(playersArr); //['Den', 'Kate', 'William', 'Matthew', 'Ethan', 'David']
+// // console.log(playersArr.length);  //6
 // const values = Object.values(players);
-// //console.log(values); //[60, 130, 45, 120, 40, 55]
-
+// console.log(values);  //[60, 130, 45, 120, 40, 55]
 // function getTime(obj) {
-//   let total = 0;
-//   for (const value of values) {
-//     total += value;
-//   }
-//   return `Count of players ${values.length}, average time ${
-//     total / values.length
-//   }`;
+//     let total = 0;
+//     for (const value of values) {
+//         total += value;
+//     }
+//     console.log(total);  //450
+//     return `Count of players ${values.length}, average time ${total / values.length}`;
 // }
 // console.log(getTime(players));  //Count of players 6, average time 75
 
-// const players = {
-//   Den: 60,
-//   Kate: 130,
-//   William: 45,
-//   Matthew: 120,
-//   Ethan: 40,
-//   David: 55,
-// };
+// const players = { Den: 60, Kate: 130, William: 45, Matthew: 120, Ethan: 40, David: 55, };
 // function getTime(obj) {
-//   let countPlayers = 0;
-//   let totalMinutes = 0;
+//     let countPlayers = 0;
+//     let totalMinutes = 0;
 
-//   for (const key in obj) {
-//     console.log(key); //den // Kate //William // Matthew //Ethan //David
-//     totalMinutes += obj[key];
-//     countPlayers += 1;
-//   }
-//   return `Count of players ${countPlayers}, average time ${
-//     totalMinutes / countPlayers
-//   }`;
+//     for (const key in obj) {
+//         console.log(key); //Den // Kate //William // Matthew //Ethan //David
+//         console.log(obj[key]);  //60  //130 //45 // 120  //40  //55
+//         totalMinutes += obj[key];  
+//         countPlayers += 1;
+//     }
+//     console.log(countPlayers);  //6
+//     console.log(totalMinutes);  //450
+//     return `Count of players ${countPlayers}, average time ${totalMinutes / countPlayers
+//         }`;
 // }
-
 // console.log(getTime(players));
 
 // Task - 3
 // 1 Створити функцію яка буде приймати 2 параметри
-//    1 параметр масив
-//    2 параметр назва книги
+//    1 параметр масив - arr
+//    2 параметр назва книги - bookName
 // Функція повертає Імена юзерів (формат стрінги) в яких є дана книга ("Harry Potter") \\\ "Anna, Oleksii"
-
 // 2 Порахувати вік всіх юзерів у яких є ключ age.
 
 // const friends = [
-//   { name: 'Anna', books: ['Bible', 'Harry Potter'], age: 21 },
-//   { name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26 },
-//   { name: 'Alice', books: ['War and peace', 'Romeo and Juliet'] },
-//   {
-//     name: 'Oleksii',
-//     books: ['Bible', 'War and peace', 'Harry Potter', 'Romeo and Juliet'],
-//     age: 26,
-//   },
+//     { name: 'Anna', books: ['Bible', 'Harry Potter'], age: 21 },
+//     { name: 'Bob', books: ['War and peace', 'Romeo and Juliet'], age: 26 },
+//     { name: 'Alice', books: ['War and peace', 'Romeo and Juliet'] },
+//     { name: 'Oleksii', books: ['Bible', 'War and peace', 'Harry Potter', 'Romeo and Juliet'], age: 26, },
 // ];
-// // function getUsers(arr, bookName) {
-// //   const userNames = [];
-// //   let totalAges = 0;
-// //   for (const user of arr) {
-// //     if (user.books.includes(bookName)) {
-// //       userNames.push(user.name);
-// //     }
-// //     if (user.age !== undefined) {
-// //       totalAges += user.age;
-// //     }
-// //   }
+// function getUsers(arr, bookName) {
+//     const userNames = [];
+//     let totalAges = 0;
+//     for (const user of arr) {
+//         if (user.books.includes(bookName)) {
+//             userNames.push(user.name);
+//         }
+//         if (user.age !== undefined) {
+//             totalAges += user.age;
+//         }
+//     }
 
-// //   console.log(totalAges);
+//     console.log(totalAges);
 
-// //   //   console.log(userNames); //['Anna', 'Oleksii']
-// //   return userNames.join(', '); // перетворює в рядок
-// // }
-// // console.log(getUsers(friends, 'Harry Potter')); //Anna, Oleksii
+//     //   console.log(userNames); //['Anna', 'Oleksii']
+//     return userNames.join(', '); // перетворює в рядок
+// }
+// console.log(getUsers(friends, 'Harry Potter')); //Anna, Oleksii
 
 // function getTotalAge(arr) {
 //   let totalAges = 0;
@@ -1178,7 +1004,7 @@ newName в масиві зілля у властивості potions.  */
 // const arr = ['1', '2', '3', '4', '5', '6'];
 // console.log([...arr].map([].pop, arr)); //['6', '5', '4', '3', '2', '1']
 
-//                     Practice M4-2 mentor
+//                  2.     PRACTICE m4-2  mentor
 
 // const obj = {
 //   sayHello() {
@@ -1238,336 +1064,294 @@ newName в масиві зілля у властивості potions.  */
 // console.log(arr);  //[1, 2, 3, 4, 5]
 
 // ******************************Деструктуризація об'єкта***************************************\\
-const user = {
-  name: 'Test name',
-  skills: {
-    html: true,
-    css: false,
-    js: true,
-  },
-};
-const { skills, name } = user;
-console.log(skills); //{html: true, css: false, js: thue}
-console.log(name); //Test name
+// const user = { name: 'Test name', skills: { html: true, css: false, js: true }, };
+
+// const { skills, name } = user;
+// console.log(skills); //{html: true, css: false, js: thue}
+// console.log(name); //Test name
 
 // const skills = ['html', 'css', 'js'];
+// const { skills, name } = user;
+// console.log(skills);  //Error
 
 // const { skills: userSkills } = user; //зміна назви ключа на userSkills
-// console.log(user); //{ ... }
-// console.log(skills); //['html', 'css', 'js']
+// console.log(user); //{ name:..., skills: {...} }
+// console.log(skills); //Error
 // console.log(userSkills); //{html: true, css: false, js: thue}
 
 // const name = user.name;
+// console.log(user.name); //Test name
 // const skills = user.skills;
+// console.log(userSkills);
 
 // ************************Глибока деструктуризація об'єкта***************************************\\
 
 // const user = {
-//     name: 'Test name',
-//     skills: {
-//         html: true,
-//         css: false,
-//         js: true
-//     },
-//     languages: {
-//         ukrainian : true,
-//         spanish: false
-//     },
-//     sayHello(){
-//         console.log(this)
-//         console.log('hello')
-//     }
-// }
-
-// const {skills : {
-//     html: skillHTML, css, js
-// }, skills, languages : {
-//     ukrainian, spanish
-// }, sayHello} = user;
-
-// console.log(ukrainian)
-// console.log(sayHello)
-// sayHello()
-// user.sayHello()
-
-// *********************Деструктуризація об'єкта в параметрах функції******************************\\
-
-// const user = {
-//     name: 'Test name',
-//     skills: {
-//         html: true,
-//         css: false,
-//         js: true
-//     }
-// }
-
-// *********Без деструктуризації
-// function getUserName(obj) {
-//     console.log(`Hello my name is ${obj.name}, I know html - ${obj.skills.html}, css - ${obj.skills.css} and js -${obj.skills.js}`);
-// }
-
-// getUserName(user)
-
-// *********З деструктуризацією
-// const user = {
-//   name: "Test name",
-//   skills: {
-//     html: true,
-//     css: false,
-//     js: true,
+//   name: 'Test name',
+//   skills: { html: true, css: false, js: true },
+//   languages: { ukrainian: true, spanish: false },
+//   sayHello() {
+//     console.log(this);
+//     console.log('hello');
 //   },
 // };
-// function getUserName({name, skills: {html, css,js}= {}} = {}) {
+
+// const {
+//   skills: { html, css, js },
+// } = user;
+// console.log(user); //object user
+
+// const {
+//   skills: { html: skillHTML, css, js },
+//   languages: { ukrainian, spanish },
+//   sayHello,
+// } = user;
+// console.log(html); //Error
+// console.log(skillHTML); //true
+
+// console.log(ukrainian); //true
+// console.log(sayHello);
+// sayHello(); //hello window
+// user.sayHello(); //hello user
+
+// *********************Деструктуризація об'єкта в параметрах функції******************************\\
+// const user = { name: 'Test name', skills: { html: true, css: false, js: true }, };
+// *********Без деструктуризації
+// function getUserName(obj) {
+//   console.log(
+//     `Hello my name is ${obj.name}, I know html - ${obj.skills.html}, css - ${obj.skills.css} and js - ${obj.skills.js}`
+//   );
+// }
+// getUserName(user);
+
+// *********З деструктуризацією
+// function getUserName({ name, skills: { html, css, js } = {} } = {}) {
 //   console.log(
 //     `Hello my name is ${name}, I know html - ${html}, css - ${css} and js -${js}`
 //   );
 // }
-
 // getUserName(user);
 
-// *************************Деструктуризація об'єкта в циклі***********************************\\
+// *********************       Деструктуризація об'єкта в циклі    ***********************************\\
 
-// const users = [{ name: "Kate" }, { name: "Alex" }, { name: "Mark" }];
+// const users = [{ name: 'Kate' }, { name: 'Alex' }, { name: 'Mark' }];
 
 // function getAllPropValues(prop) {
 //   const result = [];
 //   for (const user of users) {
 //     if (user.hasOwnProperty(prop)) {
-//       // prop in user
-
+//       // console.log(prop); //3 name -   // prop in user
+//       // console.log(user[prop]); //Kate //Alex //Mark
 //       result.push(user[prop]);
+//       // console.log(result); //['Kate'] //['Alex'] //['Mark']
 //     }
 //   }
-
 //   return result;
 // }
-// console.log(getAllPropValues("name"));
-// console.log(getAllPropValues("qwerty"));
+// console.log(getAllPropValues('name')); //['Kate', 'Alex', 'Mark']
+// console.log(getAllPropValues('qwerty'));  //[]
 
 // ********Без деструктуризації*******
-// const names = [];
+// const users = [{ name: 'Kate' }, { name: 'Alex' }, { name: 'Mark' }];
 
+// const names = [];
 // for (const user of users) {
 //     names.push(user.name)
 // }
-
-// console.log(names);
+// console.log(names); //['Kate', 'Alex', 'Mark']
 
 // ********З деструктуризацією*********
 // const names = [];
-
 // for (const {name} of users) {
 //     names.push(name)
 // }
+// console.log(names); //['Kate', 'Alex', 'Mark']
 
-// console.log(names);
-
-// *************************Операція rest та spread********************************\\
-
+// *************************     Операція rest та spread    ********************************\\
+//                                                            в масивах
 // const numbers = [1, 2, 3];
 // const copy = [...numbers]; //spread
-// console.log(numbers === copy)
+// console.log(copy); //[1, 2, 3]
+// console.log(numbers === copy); //false
 
-// const numbers = [1, 2, 3];
 // const [first, ...args] = numbers; // rest
-// console.log(first)
-// console.log(args)
+// console.log(first); //1
+// console.log(args); //[2, 3, 4, 5]
 
 // ************Операція rest та spread в функціях********************************\\
-
+//
 // const numbers = [1, 2, 3];
-
-// function foo(...props){//rest [1,2,3]
-
+// function foo(...props) {
+//   //rest [1,2,3]
+//   console.log(props); //[1, 2, 3]
+//   console.log(numbers);
 // }
-// foo(...numbers)// spread // 1 , 2 ,3
+// foo(...numbers); // spread //[1, 2, 3]
 
 // const names = ['Alice', 'Kate', 'Emma'];
 
 // function foo(first, second, third) {
-//     console.log('first', first);
-//     console.log('second', second);
-//     console.log('third', third);
+//   console.log('first', first);
+//   console.log('second', second);
+//   console.log('third', third);
 // }
+// foo(...names); // foo('Alice', 'Kate', 'Emma')   -   ...spread
 
-// foo(...names) // foo('Alice', 'Kate', 'Emma')// spread
+// function foo(first, second, third) {
+//   console.log('first', first); //first ['Alice', 'Kate', 'Emma']
+//   console.log('second', second); //second undefined
+//   console.log('third', third); //third undefined
+// }
+// foo(names);
 
 // const names = ['Alice', 'Kate', 'Emma'];
-// function foo(first, second, ...args) { //rest
-//     console.log(first);
-//     console.log(second);
-//     console.log(args);
-// }
 
-// foo('Alice', 'Kate', 'Emma', 'Mia', 'Lily')
+// function foo(...args) {
+//   console.log(args); //['Alice', 'Kate', 'Emma', 'Mia', 'Lily']  - ...rest
+// }
+// foo('Alice', 'Kate', 'Emma', 'Mia', 'Lily');
+
+// function foo(first, second, ...args) {
+//   //...rest
+//   console.log(first);
+//   console.log(second);
+//   console.log(args);
+// }
+// foo('Alice', 'Kate', 'Emma', 'Mia', 'Lily');
+
+//                                                               в об'єктах
+//const user = { name: 'Test name', age: 22, city: 'Lviv', skills: { html: true, css: false, js: true }, };
+
+// function foo({ name, age, ...props }) {  //...rest
+//   console.log(name); //Test name
+//   console.log(age); //22
+//   console.log(props); //{ city: 'Lviv', skills: {html: true, css: false, js: true} }
+// }
+// foo(user);
+
+// const user = { name: 'Test name', age: 22, city: 'Lviv', skills: { html: true, css: false, js: true }, };
+
+// function foo({ name, skills: { html, ...props2 }, ...props }) {
+//   console.log(name); //Test name
+//   console.log(html); // true
+//   console.log(props); //{ age: 22, city: 'Lviv'}
+//   console.log(props2);
+// }
+// foo(user);
+
+//               PRACTICE
+
+// Task - 1 - Деструктуризуй об'єкт таким чином щоб отримати значення name, surname, username
 
 // const user = {
-//     name: 'Test name',
-//     age: 22,
-//     city: 'Lviv',
-//     skills: {
-//         html: true,
-//         css: false,
-//         js: true
-//     }
-// }
-
-// function foo({ name, age, ...props }) {
-//     console.log(name);
-//     console.log(age);
-//     console.log(props);
-// }
-// foo(user)
-
-// const user = {
-//     name: 'Test name',
-//     age: 22,
-//     city: 'Lviv',
-//     skills: {
-//         html: true,
-//         css: false,
-//         js: true
-//     }
-// }
-
-// function foo({ name, skills: {html, ...props2}, ... props}) {
-//     console.log(name);
-//     console.log(html);
-//     console.log(props);
-//     console.log(props2);
-// }
-// foo(user)
-
-// Task - 1 - Деструктуризація
-// Деструктуризуй об'єкт таким чином щоб отримати значення name, surname, username
-
-// const user = {
-//     id: 1,
-//     username: 'harry_potter',
-//     profile: {
-//       name: 'Harry',
-//       surname: 'Potter',
-//       age: 25
-//     }
-//   };
+//   id: 1,
+//   username: 'harry_potter',
+//   profile: { name: 'Harry', surname: 'Potter', age: 25,},
+// };
 
 // Деструктуризація об'єкта для отримання окремих змінних
-// const  {username, profile : {name , surname}} = user;
+// const {
+//   username,
+//   profile: { name, surname },
+// } = user;
+// console.log(username); //harry_potter
+// console.log(name); //Harry
+// console.log(surname); //Potter
 
 // Виведення отриманих значень
 // console.log(`Ім'я користувача: ${name}`);
 // console.log(`Прізвище користувача: ${surname}`);
 // console.log(`Ім'я користувача (за нікнеймом): ${username}`);
 
-// Task - 2 Деструктуризація
-// Допиши функцію таким чином щоб кожна властивість об'єкта product була незалежним параметром
+// Task - 2 Деструктуризація - Допиши функцію таким чином щоб кожна властивість об'єкта product була
+// незалежним параметром
 
 // const product = {
-//     name: 'Smart TV',
-//     price: 25000,
-//     category: 'Electronics',
-//     details: {
-//       brand: 'Samsung',
-//       color: 'Black',
-//       weight: '15.5'
-//     }
-//   };
-
-// function displayProductInfo({name, price, category, details: {brand, color ,weight} = {}} = {}) {
-//     console.log(`Назва товару: ${name}`);
-//     console.log(`Ціна: ${price} грн`);
-//     console.log(`Категорія: ${category}`);
-//     console.log('Деталі:');
-//     console.log(`- Бренд: ${brand}`);
-//     console.log(`- Колір: ${color}`);
-//     console.log(`- Вага: ${weight} кг`);
+//   name: 'Smart TV',
+//   price: 25000,
+//   category: 'Electronics',
+//   details: { brand: 'Samsung', color: 'Black', weight: '15.5' },
+// };
+// function displayProductInfo({
+//   name,
+//   price,
+//   category,
+//   details: { brand, color, weight } = {},
+// } = {}) {
+//   console.log(product.name);
+//   console.log(`Назва товару: ${name}`);
+//   console.log(`Ціна: ${price} грн`);
+//   console.log(`Категорія: ${category}`);
+//   console.log('Деталі:');
+//   console.log(`- Бренд: ${brand}`);
+//   console.log(`- Колір: ${color}`);
+//   console.log(`- Вага: ${weight} кг`);
 // }
-
-// displayProductInfo();
+// displayProductInfo(product);
+// displayProductInfo(); //undefined
 
 // Task - 3 - Операція spread
-// Напиши функцію createContact(partialContact) так, щоб вона повертала новий об'єкт контакту з доданими властивостями id та createdAt, а також list зі значенням "default" якщо в partialContact немає такої властивості.
+// Напиши функцію createContact(partialContact) так, щоб вона повертала новий об'єкт контакту з доданими
+// властивостями id та createdAt, а також list зі значенням "default" якщо в partialContact немає такої
+// властивості.
 
 // function createContact(partialContact) {
 //   return {
 //     id: Date.now(),
 //     createdAt: new Date(),
-//     list: "default",
+//     list: 'default',
 //     ...partialContact,
 //   };
 // }
-
-// console.log(
-//   createContact({
-//     name: "Mango",
-//     email: "mango@mail.com",
-//     list: "friends",
-//   })
-// );
-// console.log(
-//   createContact({
-//     name: "Poly",
-//     email: "poly@hotmail.com",
-//   })
-// );
+// console.log(createContact({ name: 'Mango', email: 'mango@mail.com', list: 'friends', }));
+// console.log(createContact({ name: 'Poly', email: 'poly@hotmail.com', }));
 
 // Task - 4 - Операція rest
-// Напиши функцію transformUsername(user) так, щоб вона повертала новий об'єкт із властивістю fullName, замість firstName та lastName.
+// Напиши функцію transformUsername(user) так, щоб вона повертала новий об'єкт із властивістю fullName,
+// замість firstName та lastName.
 
 // function transformUsername({ firstName, lastName, ...props }) {
-//   return {
-//     fullName: `${firstName} ${lastName}`,
-//     ...props,
-//   };
+//   return { fulname: `${firstName} ${lastName}`, ...props };
 // }
 
 // function transformUsername(obj) {
 //   const result = {};
 //   for (const prop in obj) {
-//     if (prop === "firstName" || prop === "lastName") {
+//     if (prop === 'firstName' || prop === 'lastName') {
 //       continue;
 //     }
 
 //     result[prop] = obj[prop];
+//     // console.log(result);
 //   }
 
-//   result.fullName = obj.firstName + " " + obj.lastName;
+//   result.fullName = obj.firstName + ' ' + obj.lastName;
+//   console.log(result);
 
 //   return result;
 // }
-
-// console.log(
-//   transformUsername({
-//     id: 1,
-//     firstName: "Jacob",
-//     lastName: "Mercer",
-//     email: "j.mercer@mail.com",
-//     friendCount: 40,
-//   })
-// );
-
-// console.log(
-//   transformUsername({
-//     id: 2,
-//     firstName: "Adrian",
-//     lastName: "Cross",
-//     email: "a.cross@hotmail.com",
-//     friendCount: 20,
-//   })
-// );
+// console.log(transformUsername(
+//   { id: 1, firstName: 'Jacob', lastName: 'Mercer', email: 'j.mercer@mail.com', friendCount: 40, }
+// ));
+// console.log(transformUsername(
+//   { id: 2, firstName: 'Adrian', lastName: 'Cross', email: 'a.cross@hotmail.com', friendCount: 20, }
+// ));
 
 // Task - 5 Об'єкт параметрів
-// Необхідно зрoбити рефакторинг функції calculateHousePerimeter, так щоб вона приймала об'єкт з параметрами будинку, включаючи довжини сторін будинку. Функція повинна розрахувати та повернути периметр будинку.
+// Необхідно зрoбити рефакторинг функції calculateHousePerimeter, так щоб вона приймала об'єкт з параметрами 
+// будинку, включаючи довжини сторін будинку.Функція повинна розрахувати та повернути периметр будинку.
+// function calculateHousePerimeter(a, b, c, d) {
+//   const perimeter = a + b + c + d;
+//   return perimeter;
+// }
+// const perimeter = calculateHousePerimeter(10, 15, 10, 15);
+// console.log(`Периметр будинку: ${perimeter}`); //Периметр будинку: 50
 
 // function calculateHousePerimeter({ sideA: a, sideB: b, sideC: c, sideD: d }) {
 //   const perimeter = a + b + c + d;
 //   return perimeter;
 // }
+// // console.log(calculateHousePerimeter({ sideA: 10, sideB: 15, sideC: 10, sideD: 15 }));  //50
 
-// const perimeter = calculateHousePerimeter({
-//   sideA: 10,
-//   sideB: 15,
-//   sideC: 10,
-//   sideD: 15,
-// });
-// console.log(`Периметр будинку: ${perimeter}`);
+// const perimeter = calculateHousePerimeter({ sideA: 10, sideB: 15, sideC: 10, sideD: 15, });
+// console.log(`Периметр будинку: ${perimeter}`);  //Периметр будинку: 50
