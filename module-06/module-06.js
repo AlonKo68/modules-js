@@ -713,11 +713,224 @@
 // console.log(instance.b); //undefined
 // console.log(MyClass.b); //5
 
+//4.9.1
+// class Car {
+//     static maxPrice = 50000;
+//     #price;
+//     constructor(params) {
+//         this.#price = params.price;
+//     }
+//     get price() {
+//         return this.#price;
+//     }
+//     set price(newPrice) {
+//         if (newPrice <= Car.maxPrice) {
+//             return this.#price = newPrice;
+//         }
+//     }
+// }
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
 
+// audi.price = 49000;
+// console.log(audi.price); // 49000
 
+// audi.price = 51000;
+// console.log(audi.price); // 49000
 
+//      4.10.  Статичні методи
 
+// class User {
+//     static #takenEmails = [];
+//     static isEmailTaken(email) {
+//         return User.#takenEmails.includes(email);
+//     }
+//     #email;
+//     constructor(params) {
+//         this.#email = params.email;
+//         User.#takenEmails.push(params.email);
+//     }
+// }
+// const mango = new User({ email: "mango@mail.com" });
+// console.log(User.isEmailTaken("poly@mail.com")); // false
+// console.log(User.isEmailTaken("mango@mail.com")); // true
 
+//4.10.1.
+// class Car {
+//     static #maxPrice = 50000;
+//     static checkPrice(price) {
+//         if (price <= Car.#maxPrice) {
+//             return "Success! Price is within acceptable limits"
+//         }
+//         return "Error! Price exceeds the maximum";
+
+//     }
+//     constructor(params) {
+//         this.price = params.price;
+//     }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+//      4.11.    Наслідування класів
+// class User {
+//     #email;
+//     constructor(email) {
+//         this.#email = email;
+//     }
+//     get email() {
+//         return this.#email;
+//     }
+//     set email(newEmail) {
+//         this.#email = newEmail;
+//     }
+// }
+// class ContentEditor extends User {
+//     // Тіло класу ContentEditor
+// }
+// const editor = new ContentEditor("mango@mail.com");
+// console.log(editor); // { #email: "mango@mail.com" }
+// console.log(editor.email); // "mango@mail.com"
+
+// 4.11.1.У застосунку потрібен адміністратор з можливістю додавати 
+// пошти користувачів у чорний список.
+// class User {
+//     constructor(email) {
+//         this.email = email;
+//     }
+//     get email() {
+//         return this.email;
+//     }
+//     set email(newEmail) {
+//         this.email = newEmail;
+//     }
+// }
+// class Admin extends User {
+//     static role = { BASIC: "basic", SUPERUSER: "superuser" };
+// }
+// console.log(Admin.role.BASIC);  //basic
+// console.log(Admin.role.SUPERUSER); // superuser
+
+//   4.12.   Конструктор дочірнього класу
+// class User {
+//     #email;
+//     constructor(email) {
+//         this.#email = email;
+//     }
+//     get email() {
+//         return this.#email;
+//     }
+//     set email(newEmail) {
+//         this.#email = newEmail;
+//     }
+// }
+// class ContentEditor extends User {
+//     constructor(params) {
+//         // Виклик конструктора батьківського класу User
+//         super(params.email);
+//         this.posts = params.posts;
+//     }
+// }
+// const editor = new ContentEditor({
+//     email: "mango@mail.com",
+//     posts: []
+// });
+// console.log(editor); // { #email: "mango@mail.com", posts: [] }
+// console.log(editor.email); // "mango@mail.com"
+
+//4.12.1.
+// class User {
+//     email;
+//     constructor(email) {
+//         this.email = email;
+//     }
+//     get email() {
+//         return this.email;
+//     }
+//     set email(newEmail) {
+//         this.email = newEmail;
+//     }
+// }
+// class Admin extends User {
+//     static role = { BASIC: "basic", SUPERUSER: "superuser", };
+//     constructor(params) {
+//         super(params.email);
+//         this.access = params.access;
+//     }
+// }
+// const mango = new Admin({ email: "mango@mail.com", access: Admin.role.SUPERUSER, });
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+// console.log(Admin.role.BASIC);  //basic
+// console.log(Admin.role.SUPERUSER); //superuser
+
+//   4.13.   Методи дочірнього класу
+
+// class ContentEditor extends User {
+//     constructor(params) {
+//         super(params.email);
+//         this.posts = params.posts;
+//     }
+//     addPost(post) {
+//         this.posts.push(post);
+//     }
+// }
+// const editor = new ContentEditor({
+//     email: "mango@mail.com",
+//     posts: []
+// });
+// console.log(editor); // { #email: "mango@mail.com", posts: [], addPost: f }
+// editor.addPost("post-1");
+// editor.addPost("post-2");
+// console.log(editor.posts); // ['post-1', 'post-2']
+
+//4.13.1.
+// class User {
+//     email;
+//     constructor(email) {
+//         this.email = email;
+//     }
+//     get email() {
+//         return this.email;
+//     }
+//     set email(newEmail) {
+//         this.email = newEmail;
+//     }
+// }
+// class Admin extends User {
+//     static role = {
+//         BASIC: "basic",
+//         SUPERUSER: "superuser",
+//     };
+//     constructor(params) {
+//         super(params.email);
+//         this.access = params.access;
+//         this.blacklistedEmails = params.blacklistedEmails || [];
+//     }
+//     blacklist(email) {
+//         this.blacklistedEmails.push(email);
+//     }
+//     isBlacklisted(email) {
+//         return this.blacklistedEmails.includes(email);
+//     }
+// }
+
+// const mango = new Admin({
+//     email: "mango@mail.com",
+//     access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
 
 
 
@@ -1503,33 +1716,33 @@
 // Властивість health має зберігати поточний рівень здоров'я героя.
 // Метод attack наносить пошкодження в розмір 10 одиниць. Метод heal додає до здоров'я героя 10 одиниць.
 
-class Hero {
-    static counter = 0;
-    static addHero() {
-        this.counter += 1; // Hero.counter
-        console.log(`Кількість героїв ${this.counter}`);
-    }
-    constructor(name) {
-        this.name = name;
-        this.level = 1;
-        this.health = 200;
-        Hero.addHero();
-    }
-    attack() {
-        console.log("Attack with 10 damage");
-    }
-    heal() {
-        this.health += 10;
-    }
-}
+// class Hero {
+//     static counter = 0;
+//     static addHero() {
+//         this.counter += 1; // Hero.counter
+//         console.log(`Кількість героїв ${this.counter}`);
+//     }
+//     constructor(name) {
+//         this.name = name;
+//         this.level = 1;
+//         this.health = 200;
+//         Hero.addHero();
+//     }
+//     attack() {
+//         console.log("Attack with 10 damage");
+//     }
+//     heal() {
+//         this.health += 10;
+//     }
+// }
 
-const bloodseker = new Hero("Bloodseker");  //Кількість героїв 1
-const shadow = new Hero("Shadow Fiend");  //Кількість героїв 2
-const pudge = new Hero("Pudge");  //Кількість героїв 3
-console.log(bloodseker);
-console.log(bloodseker.heal());
-console.log(bloodseker);
-console.log(Hero.counter);
+// const bloodseker = new Hero("Bloodseker");  //Кількість героїв 1
+// const shadow = new Hero("Shadow Fiend");  //Кількість героїв 2
+// const pudge = new Hero("Pudge");  //Кількість героїв 3
+// console.log(bloodseker);
+// console.log(bloodseker.heal());
+// console.log(bloodseker);
+// console.log(Hero.counter);
 
 // *******Task-4******* \\
 // Необхідно створити клас BankAccount, який представляє банківський рахунок. Клас повинен мати приватну властивість balance, яка представляє баланс рахунку. Клас повинен також мати публічні методи deposit та withdraw, які дозволяють здійснювати операції з депозитом та зняттям коштів з рахунку. При цьому balance повинна бути доступна лише в межах класу BankAccount та його приватних методів.

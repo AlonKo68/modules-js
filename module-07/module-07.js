@@ -11,22 +11,30 @@
 // console.log(listWithClass);
 
 // const menuItemsByTagName = document.querySelectorAll("li");
-// console.log(menuItemsByTagName);
+// console.log(menuItemsByTagName);  //NodeList(4) [li.menu-item, li.menu-item, li.menu-item, li]
 
 // const menuItemsByClass = document.querySelectorAll(".menu-item");
-// console.log(menuItemsByClass);
+// console.log(menuItemsByClass); //NodeList(3) [li.menu-item, li.menu-item, li.menu-item]
 
 // const firstMenuItem = document.querySelector(".menu-item");
 // firstMenuItem.style.color = 'tomato';
 // console.log(firstMenuItem);
 
+// const menuItemArr = [...menuItemsByClass];
+// // const menuItemArr = Array.from(menuItemsByClass);
+// const [first, second, third] = menuItemArr;
+// console.log(second);
+
+// second.style.color = 'green';
+// third.style.color = 'blue';
+
 //                 2.      Властивості та атрибути
 //     2.1.   Доступ до властивостей
-// const link = document.querySelector(".link");
-// console.log(link.href); // "http://https//goit.global
+// const linkGoit = document.querySelector(".link-goit");
+// console.log(linkGoit.href); // "http://https//goit.global
 
-// link.href = "https://neo.goit.global";
-// console.log(link.href); // "https://neo.goit.global/"
+// linkGoit.href = "https://neo.goit.global";
+// console.log(linkGoit.href); // "https://neo.goit.global/"
 
 //     2.2.   Властивість textContent
 // const el = document.querySelector(".text");
@@ -35,11 +43,13 @@
 // const nested = document.querySelector('span');
 // console.log(nested.textContent); // "Mango"
 
+// nested.textContent = 'Brian';
+// console.log(nested);
+// console.log(el); //
+
 // el.textContent = 'Username: Poly';
 // console.log(el.textContent);  //Username: Poly'
 
-// nested.textContent = 'Brian';
-// console.log(nested.textContent);  //Brian
 
 //     2.3.     Властивість classList
 // const link = document.querySelector(".link");
@@ -58,7 +68,7 @@
 // link.classList.remove("is-active");
 // console.log(link.classList); //DOMTokenList(2) ['link', 'special', value: 'link special']
 
-//Метод classList.remove(className)
+//Метод classList.toggle(className)
 // link.classList.toggle("is-active");
 // console.log(link.classList);  //DOMTokenList(3) ['link', 'special', 'is-active', value: 'link special is-active']
 
@@ -101,31 +111,261 @@
 // console.log(link.hasAttribute('target'));  //false
 
 //          2.6   Власні атрибути
-const saveBtn = document.querySelector('button[data-action="save"]');
-console.log(saveBtn.dataset.action); //save
+// const saveBtn = document.querySelector('button[data-action="save"]');
+// console.log(saveBtn.dataset.action); //save
 
-const closeBtn = document.querySelector('button[data-action="close"]');
-console.log(closeBtn.dataset.action); //close
+// const closeBtn = document.querySelector('button[data-action="close"]');
+// console.log(closeBtn.dataset.action); //close
 
-// Змінюємо значення data-action для кнопки saveBtn
-saveBtn.dataset.action = "update";
-// Додаємо новий data-атрибут data-role
-saveBtn.dataset.role = "admin";
+// // Змінюємо значення data-action для кнопки saveBtn
+// saveBtn.dataset.action = "update";
+// // Додаємо новий data-атрибут data-role
+// saveBtn.dataset.role = "admin";
 
-console.log(saveBtn.dataset.action); // "update"
-console.log(saveBtn.dataset.role); // "admin"
-console.log(saveBtn);
+// console.log(saveBtn.dataset.action); // "update"
+// console.log(saveBtn.dataset.role); // "admin"
+// console.log(saveBtn);
+
+//            3. Створення та видалення елементів
+
+//      3.1 Створення елементів i
+//      3.2.  Додавання елементів в DOM-дереві
+// const heading = document.createElement("h1");
+// heading.classList.add("title", "hero-title");
+// heading.textContent = "this is a heading in HERO";
+// console.log(heading);
+
+const link = document.createElement("a");
+link.classList.add("link-heading", "link");
+link.textContent = 'site'
+link.href = 'https://xn--80adth0aefm3i.xn--j1amh/window';
+link.alt = 'site js';
+link.target = '_blank';
+console.log(link);
+//Додавання елементів в DOM-дереві
+const el = document.querySelector(".article");
+el.prepend(link); //before
+// el.append(link);  //after
 
 
-const heading = document.createElement("h1");
 
 
+//  3.3. Видалення елементів
+const linkA = document.querySelector('.is-active');
+linkA.remove(); //not a class is-active
+
+//   3.4. Властивість innerHTML
+//  Читання
+// const article = document.querySelector(".article");
+// console.log(article.innerHTML);
+
+// // const title = document.querySelector(".article .title");
+// // console.log(title.innerHTML);
+
+// const text = document.querySelector(".article .text");
+// // console.log(text.innerHTML);
+
+// const link = document.querySelector(".article .link");
+// console.log(link.innerHTML);
+
+//Зміна
+// const title = document.querySelector(".article .title");
+// title.innerHTML = 'New and <span class="accent">improved</span> title';
+
+// text.innerHTML = '';
+// console.log(text); //<p class="text"></p>
+
+const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+const list = document.querySelector(".list");
+const markup = technologies
+    .map((technology) => `<li class="list-item">${technology}</li>`)
+    .join("");
+
+// // Check the console, you'll see a single string with HTML tags
+console.log(markup);
+// // Adding all the markup in one operation
+list.innerHTML = markup;
+
+//  3.5.    Метод insertAdjacentHTML()
+const listTech = document.querySelector('.list-tech');
+listTech.insertAdjacentHTML('beforebegin', '<h3>Technologies</h3>')
+
+const newTechnologies = ['React', 'TypeScript', 'Node.js'];
+const makeNewTechnologies = newTechnologies
+    .map((technolog) => `<li class="list-item">${technolog}</li>`)
+    .join("");
+listTech.insertAdjacentHTML('beforeend', makeNewTechnologies);
 
 
+//               4.     Події
+//     4.1. Метод addEventListener()
+// const button = document.querySelector(".my-button");
 
+// button.addEventListener("click", () => {
+//     console.log("The button was pressed and now the next image will appear");
+// });
+//or
+// const button = document.querySelector(".my-button");
+// const handleClick = () => {
+//     console.log("The button was pressed and now the next image will appear");
+// };
+// button.addEventListener("click", handleClick);
 
+// const singleBtn = document.querySelector("#single");
+// const handleClick = () => { console.log("click event listener callback"); };
+// singleBtn.addEventListener("click", handleClick);
 
+// ===============================================
+// const multiBtn = document.querySelector("#multiple");
 
+// const firstCallback = () => { console.log("First callback!"); };
+// const secondCallback = () => { console.log("Second callback!"); };
+// const thirdCallback = () => { console.log("Third callback!"); };
+// multiBtn.addEventListener("click", firstCallback);
+// multiBtn.addEventListener("click", secondCallback);
+// multiBtn.addEventListener("click", thirdCallback);
+
+//      4.2.   Метод removeEventListener()
+// const button = document.querySelector(".my-button");
+// const handleClick = () => {
+//     console.log("The button was pressed and now the next image will appear");
+// };
+// button.addEventListener("click", handleClick);
+
+// const addListenerBtn = document.querySelector('.js-add');
+// const removeListenerBtn = document.querySelector('.js-remove');
+// const btn = document.querySelector(".target-btn");
+
+// const handleClick = () => {
+//     console.log("click event listener callback");
+// };
+// addListenerBtn.addEventListener("click", () => {
+//     btn.addEventListener("click", handleClick);
+//     console.log("click event listener was added to btn");
+// });
+
+// removeListenerBtn.addEventListener("click", () => {
+//     btn.removeEventListener("click", handleClick);
+//     console.log("click event listener was removed from btn");
+// });
+
+//  4.3.  Об'єкт події
+// const button = document.querySelector(".btn");
+// const handleClick = (event) => {
+//     console.log("event: ", event);
+//     console.log("event type: ", event.type);
+//     console.log("currentTarget: ", event.currentTarget);
+// };
+// button.addEventListener("click", handleClick);
+
+//   4.4. Події клавіатури
+
+// const button = document.querySelector(".btn");
+
+// const handleClick = (event) => {
+//     console.log("event: ", event);
+//     console.log("event type: ", event.type);
+//     console.log("currentTarget: ", event.currentTarget);
+// };
+
+// button.addEventListener("click", handleClick);
+
+//  4.5.  Властивості key і code
+
+// const clearLogBtn = document.querySelector(".js-clear");
+// const logList = document.querySelector(".log-list");
+// let keypressCounter = 1;
+// console.log(clearLogBtn)
+
+// document.addEventListener("keydown", logMessage);
+// document.addEventListener("keyup", logMessage);
+// clearLogBtn.addEventListener("click", reset);
+
+// function logMessage({ type, key, code }) {
+//     const markup = `<div class="log-item">
+//     <span class="chip">${keypressCounter}</span>
+//     <ul>
+//       <li><b>Event</b>: ${type}</li>
+//       <li><b>Key</b>: ${key}</li>
+//       <li><b>Code</b>: ${code}</li>
+//     </ul>
+//   </div>`;
+//     logList.insertAdjacentHTML("afterbegin", markup);
+//     if (type === "keyup") {
+//         incrementKeypressCounter();
+//     }
+// }
+// function reset() {
+//     keypressCounter = 1;
+//     logList.innerHTML = "";
+// }
+// function incrementKeypressCounter() {
+//     keypressCounter += 1;
+// }
+
+//               5. Події елементів форм
+//     5.1.  Подія submit
+
+const registerForm = document.querySelector(".form");
+registerForm.addEventListener("submit", handleSubmit);
+function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const login = form.elements.login.value;
+    const password = form.elements.password.value;
+    if (login === "" || password === "") {
+        return console.log("Please fill in all the fields!");
+    }
+    console.log(`Login: ${login}, Password: ${password}`);
+    form.reset();
+}
+
+//     5.2. Подія change
+const select = document.querySelector(".pizza-select");
+const textOutput = document.querySelector(".text-output");
+const valueOutput = document.querySelector(".value-output");
+
+select.addEventListener("change", setOutput);
+
+function setOutput(event) {
+    const selectedOptionValue = event.currentTarget.value;
+    const selectedOptionIndex = event.currentTarget.selectedIndex;
+    const selectedOptionText =
+        event.currentTarget.options[selectedOptionIndex].text;
+
+    textOutput.textContent = selectedOptionText;
+    valueOutput.textContent = selectedOptionValue;
+}
+
+//     5.3    Подія input
+
+// const textInput = document.querySelector(".text-input");
+// const output = document.querySelector(".output");
+// textInput.addEventListener("input", (event) => {
+//     output.textContent = event.currentTarget.value;
+// });
+
+//   5.4.  Подія focus і blur
+
+const textInput = document.querySelector(".text-input");
+const setFocusBtn = document.querySelector('[data-action="set"]');
+const removeFocusBtn = document.querySelector('[data-action="remove"]');
+
+setFocusBtn.addEventListener("click", () => {
+    textInput.focus();
+});
+
+removeFocusBtn.addEventListener("click", () => {
+    textInput.blur();
+});
+
+textInput.addEventListener("focus", () => {
+    textInput.value = "This input has focus";
+});
+
+textInput.addEventListener("blur", () => {
+    textInput.value = "";
+});
 
 
 //                         Practice M7-1 Mentor
