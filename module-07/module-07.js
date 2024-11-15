@@ -50,7 +50,6 @@
 // el.textContent = 'Username: Poly';
 // console.log(el.textContent);  //Username: Poly'
 
-
 //     2.3.     Властивість classList
 // const link = document.querySelector(".link");
 // console.log(link.classList); //DOMTokenList(2) ['link', 'is-active', value: 'link is-active']
@@ -135,24 +134,21 @@
 // heading.textContent = "this is a heading in HERO";
 // console.log(heading);
 
-const link = document.createElement("a");
-link.classList.add("link-heading", "link");
-link.textContent = 'site'
-link.href = 'https://xn--80adth0aefm3i.xn--j1amh/window';
-link.alt = 'site js';
-link.target = '_blank';
-console.log(link);
-//Додавання елементів в DOM-дереві
-const el = document.querySelector(".article");
-el.prepend(link); //before
-// el.append(link);  //after
-
-
-
+// const link = document.createElement("a");
+// link.classList.add("link-heading", "link");
+// link.textContent = 'site'
+// link.href = 'https://xn--80adth0aefm3i.xn--j1amh/window';
+// link.alt = 'site js';
+// link.target = '_blank';
+// console.log(link);
+// //Додавання елементів в DOM-дереві
+// const el = document.querySelector(".article");
+// el.prepend(link); //before
+// // el.append(link);  //after
 
 //  3.3. Видалення елементів
-const linkA = document.querySelector('.is-active');
-linkA.remove(); //not a class is-active
+// const linkA = document.querySelector('.is-active');
+// linkA.remove(); //not a class is-active
 
 //   3.4. Властивість innerHTML
 //  Читання
@@ -175,27 +171,26 @@ linkA.remove(); //not a class is-active
 // text.innerHTML = '';
 // console.log(text); //<p class="text"></p>
 
-const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
-const list = document.querySelector(".list");
-const markup = technologies
-    .map((technology) => `<li class="list-item">${technology}</li>`)
-    .join("");
+// const technologies = ["HTML", "CSS", "JavaScript", "React", "Node"];
+// const list = document.querySelector(".list");
+// const markup = technologies
+//     .map((technology) => `<li class="list-item">${technology}</li>`)
+//     .join("");
 
 // // Check the console, you'll see a single string with HTML tags
-console.log(markup);
+// console.log(markup);
 // // Adding all the markup in one operation
-list.innerHTML = markup;
+// list.innerHTML = markup;
 
 //  3.5.    Метод insertAdjacentHTML()
-const listTech = document.querySelector('.list-tech');
-listTech.insertAdjacentHTML('beforebegin', '<h3>Technologies</h3>')
+// const listTech = document.querySelector('.list-tech');
+// listTech.insertAdjacentHTML('beforebegin', '<h3>Technologies</h3>')
 
-const newTechnologies = ['React', 'TypeScript', 'Node.js'];
-const makeNewTechnologies = newTechnologies
-    .map((technolog) => `<li class="list-item">${technolog}</li>`)
-    .join("");
-listTech.insertAdjacentHTML('beforeend', makeNewTechnologies);
-
+// const newTechnologies = ['React', 'TypeScript', 'Node.js'];
+// const makeNewTechnologies = newTechnologies
+//     .map((technolog) => `<li class="list-item">${technolog}</li>`)
+//     .join("");
+// listTech.insertAdjacentHTML('beforeend', makeNewTechnologies);
 
 //               4.     Події
 //     4.1. Метод addEventListener()
@@ -306,36 +301,36 @@ listTech.insertAdjacentHTML('beforeend', makeNewTechnologies);
 //               5. Події елементів форм
 //     5.1.  Подія submit
 
-const registerForm = document.querySelector(".form");
-registerForm.addEventListener("submit", handleSubmit);
-function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const login = form.elements.login.value;
-    const password = form.elements.password.value;
-    if (login === "" || password === "") {
-        return console.log("Please fill in all the fields!");
-    }
-    console.log(`Login: ${login}, Password: ${password}`);
-    form.reset();
-}
+// const registerForm = document.querySelector(".form");
+// registerForm.addEventListener("submit", handleSubmit);
+// function handleSubmit(event) {
+//     event.preventDefault();
+//     const form = event.target;
+//     const login = form.elements.login.value;
+//     const password = form.elements.password.value;
+//     if (login === "" || password === "") {
+//         return console.log("Please fill in all the fields!");
+//     }
+//     console.log(`Login: ${login}, Password: ${password}`);
+//     form.reset();
+// }
 
 //     5.2. Подія change
-const select = document.querySelector(".pizza-select");
-const textOutput = document.querySelector(".text-output");
-const valueOutput = document.querySelector(".value-output");
+// const select = document.querySelector(".pizza-select");
+// const textOutput = document.querySelector(".text-output");
+// const valueOutput = document.querySelector(".value-output");
 
-select.addEventListener("change", setOutput);
+// select.addEventListener("change", setOutput);
 
-function setOutput(event) {
-    const selectedOptionValue = event.currentTarget.value;
-    const selectedOptionIndex = event.currentTarget.selectedIndex;
-    const selectedOptionText =
-        event.currentTarget.options[selectedOptionIndex].text;
+// function setOutput(event) {
+//     const selectedOptionValue = event.currentTarget.value;
+//     const selectedOptionIndex = event.currentTarget.selectedIndex;
+//     const selectedOptionText =
+//         event.currentTarget.options[selectedOptionIndex].text;
 
-    textOutput.textContent = selectedOptionText;
-    valueOutput.textContent = selectedOptionValue;
-}
+//     textOutput.textContent = selectedOptionText;
+//     valueOutput.textContent = selectedOptionValue;
+// }
 
 //     5.3    Подія input
 
@@ -347,84 +342,97 @@ function setOutput(event) {
 
 //   5.4.  Подія focus і blur
 
-const textInput = document.querySelector(".text-input");
-const setFocusBtn = document.querySelector('[data-action="set"]');
-const removeFocusBtn = document.querySelector('[data-action="remove"]');
+// const textInput = document.querySelector(".text-input");
+// const setFocusBtn = document.querySelector('[data-action="set"]');
+// const removeFocusBtn = document.querySelector('[data-action="remove"]');
 
-setFocusBtn.addEventListener("click", () => {
-    textInput.focus();
-});
+// setFocusBtn.addEventListener("click", () => {
+//     textInput.focus();
+// });
 
-removeFocusBtn.addEventListener("click", () => {
-    textInput.blur();
-});
+// removeFocusBtn.addEventListener("click", () => {
+//     textInput.blur();
+// });
 
-textInput.addEventListener("focus", () => {
-    textInput.value = "This input has focus";
-});
+// textInput.addEventListener("focus", () => {
+//     textInput.value = "This input has focus";
+// });
 
-textInput.addEventListener("blur", () => {
-    textInput.value = "";
-});
-
+// textInput.addEventListener("blur", () => {
+//     textInput.value = "";
+// });
 
 //                         Practice M7-1 Mentor
 
-// ******     Пошук HTML елементу за допомогою querySelector      ****** \\
+// ******     Пошук HTML елементу за доп. querySelector      ****** \\
 //        1.     За назвою тегу
-// const title = document.querySelector('h1');
-// console.log(title);
+// const titleSelector = document.querySelector('h1');
+// console.log(titleSelector); //<h1 class="title js-title" id="title">Hello world</h1>
+
+// const titleMistake = document.querySelector('h');
+// console.log(titleMistake); //null
 
 //        2.     За назвою класу
-// const title = document.querySelector('.js-title');
-// console.log(title);  //<h1 class="title js-title" id="title">Hello world</h1>
+// const titleClass = document.querySelector('.js-title');
+// console.log(titleClass);  //<h1 class="title js-title" id="title">Hello world</h1>
 
 //        3. За ID
-// const title = document.querySelector('#title');
-// // console.log(title);  //<h1 class="title js-title" id="title">Hello world</h1> 
-// console.dir(title);  //h1#title.title.js-title - object
+// const titleId = document.querySelector('#title');
+// console.log(titleId);  //<h1 class="title js-title" id="title">Hello world</h1>
 
-// const title = document.querySelector('.js_title');
-// console.log(title)
+// console.dir(titleId);  //h1#title.title.js-title - object
 
-// ******Пошук HTML елементів за допомогою querySelectorAll****** \\
+// ****   Пошук HTML елементів за доп. querySelectorAll    **** \\
 
-// const items = document.querySelectorAll('li')
-// console.log(items);  //NodeList(3) [li.js-item, li.js-item, li.js-item]
+// const itemSelector = document.querySelectorAll('li')
+// console.log(itemSelector);  //NodeList(3) [li.js-item, li.js-item, li.js-item]
 
-// Перетворення колекції до масиву
-// console.log(Array.from(items));  //(3) [li.js-item, li.js-item, li.js-item]
-// console.log([...items]); //(3)[li.js - item, li.js - item, li.js - item]
+// const itemClass = document.querySelectorAll('.js-item');
+// console.log(itemClass);  //NodeList(3) [li.js-item, li.js-item, li.js-item]
 
+// Перетворення колекції(псевдомасив) до масиву
 
-// const items = document.querySelectorAll('.js-item')
-// console.log(items);  //NodeList(3) [li.js-item, li.js-item, li.js-item]
+// console.log(Array.from(itemSelector));  //(3) [li.js-item, li.js-item, li.js-item]
+// console.log([...itemClass]); //(3)[li.js - item, li.js - item, li.js - item]
 
-// Перетворення колекції до масиву
-// console.log(Array.from(items));  //(3) [li.js-item, li.js-item, li.js-item]
-// console.log([...items]); //(3)[li.js - item, li.js - item, li.js - item]
+// ***   Створення HTML елементів за допомогою createElement()  *** \\
 
-// ******        Створення HTML елементів за допомогою createElement****** \\
 // const list = document.querySelector(".js-list");
 
 // const li = document.createElement("li");
 // const h2 = document.createElement("h2");
-// // console.dir(h2);
 
+// const h3 = document.createElement("h3");
+
+// //      Властивість textContent
 // h2.textContent = "Hello world";
+// console.log(h2);  //<h2>Hello world</h2>
+
+// h3.textContent = "How are you?";
+// console.log(h3);
+
+// li.append(h2); //h2 in li
+// list.append(li); //li in list end
+// console.log(list); //after I ❤ JS
 
 // li.append(h2);
-// list.append(li);
-// console.log(list);
+// list.prepend(li);
+// console.log(list); //before I ❤ JS
 
-// ******       Створення HTML елементів за допомогою шаблонної розмітки****** \\
+// li.append(h2, h3);
+
+// **    Створення HTML елементів за допомогою шаблонної розмітки   ** \\
+
 // const list = document.querySelector(".js-list");
 // const title = 'Hello world';
 // const li = `<li> <h2>${title}</h2> </li>`;
-// // Метод insertAdjacentHTML
+
+// Метод insertAdjacentHTML
+
 // list.insertAdjacentHTML('beforeend', li);
 // console.log(list);
 
+// list.insertAdjacentHTML("afterend", li);
 //or
 // const list = document.querySelector(".js-list");
 // const title = 'Hello world';
@@ -432,31 +440,51 @@ textInput.addEventListener("blur", () => {
 // console.log(list);
 
 // Властивість innerHTML
+
 // const list = document.querySelector(".js-list");
 // const title = 'Hello world';
 // const li = `<li> <h2>${title}</h2> </li>`;
 // list.innerHTML = li;
-// console.log(list);
+// console.log(list); //I ❤ JS changes Hello world
+
+//   * Метод getElementById()*
+
+// const title = document.getElementById('title');
+// console.log(title); //html h1
+
+// const titleId = document.getElementById('title-id');
+// console.log(titleId);  //null
+
+//   * Метод getElementsByClassName(), getElementsByTagName()
+
+// const list = document.getElementsByClassName('js-list');
+// console.log(list); //HTMLCollection [h1#title.title.js-title, title: h1#title.title.js-title]
+
+// const item = document.getElementsByClassName('js-item');
+// console.log(item);  //HTMLCollection(3)[li]
+
+// const dynamicArr = document.getElementsByClassName("js-item");
+// console.log(dynamicArr); //HTMLCollection(3)[li]
+
+// const staticArr = document.querySelectorAll(".js-item");
+// console.log(staticArr); //NodeList(3)[li]
+
+//  * create li fourth
 
 // const list = document.querySelector(".js-list");
-// const title = document.getElementById('title')
-// console.log(title)
-
-// const list = document.querySelector(".js-list");
-// console.log(list.children)
 // const dynamicArr = document.getElementsByClassName("js-item");
 // const staticArr = document.querySelectorAll(".js-item");
+// list.insertAdjacentHTML('beforeend', '<li class="js-item">item 4</li>')
+// list.insertAdjacentHTML('beforeend', '<li class="js-item">item 5</li>')
 
-// list.insertAdjacentHTML(
-//   "beforeend",
-//   '<li class="js-item">Item 4</li><li class="js-item">Item 5</li><li class="js-item">Item 6</li>'
-// );
+// console.log(dynamicArr); //HTMLCollection(5)[li]
 
-// console.log(dynamicArr);
+// console.log(staticArr); //NodeList(3)[li]
 
-// console.log(staticArr);
+// const list = document.querySelector('.js-list')
+// console.log(list); //HTMLCollection[li]
 
-// ******Стилізація за допомогою властивості style****** \\
+// ***  Стилізація за допомогою властивості style    **** \\
 
 // const list = document.querySelector(".js-list");
 
@@ -466,128 +494,392 @@ textInput.addEventListener("blur", () => {
 
 // ******Стилізація за допомогою властивості classList****** \\
 
-// console.dir(list)
+// const list = document.querySelector(".js-list");
+// console.dir(list);
 
 // Метод add
-// list.classList.add('list')
+// list.classList.add('list');
+
 // Метод remove
+// list.classList.remove('list');
+// list.classList.remove('secondList');
 
-// list.classList.remove('list')
-// list.classList.remove('secondList')
 // Метод toggle
-// list.classList.toggle('list')
-// list.classList.toggle('list')
+// list.classList.toggle('list');
+// list.classList.toggle('list');
 
-// ******Системні атрибути****** \\
+// ****   Системні атрибути  **** \\
 // const btn = document.querySelector('.js-btn');
 // btn.hidden = true;
 // btn.hidden = false;
 // btn.disabled = true;
 
 // методи для роботи з атрибутами
-
-// console.log(btn.hasAttribute('hidden'))
-// console.log(btn.getAttribute('disabled'))
-// btn.setAttribute('disabled', true);
-// btn.removeAttribute('disabled')
-
-// ******Data атрибути****** \\
-
+//hasAttribute(), getAttribute(), setAttibute(), removeAttribute()
 // const btn = document.querySelector('.js-btn');
 
-// console.dir(btn)
+// console.log(btn.hasAttribute('hidden'));
+// console.log(btn.getAttribute('hidden')); //null
 
-// console.log(btn.getAttribute('data-btn-custom-super-id'))
-// console.log(btn.dataset.btnCustomSuperId)
+// btn.hidden = true;
+// console.log(btn.hasAttribute('hidden')); //true
+// console.log(btn.getAttribute('hidden')); //
+
+// btn.setAttribute('disabled', true);
+// console.log(btn.getAttribute('disabled')); //true
+
+// btn.removeAttribute('disabled');
+// console.log(btn.getAttribute('disabled')); //null
+
+// btn.removeAttribute('hidden');
+// console.log(btn.getAttribute('hidden'));
+
+// ******    Data атрибути   ****** \\
+
+// const btn = document.querySelector('.js-btn');
+// console.log(btn.getAttribute('data-btn-custom-super-id')); //34523
+// console.dir(btn); //dataset
+
+// console.log(btn.dataset.btnCustomSuperId); //34523
+// console.log(btn.getAttribute('data-btn-custom-super-id')) //34523
 
 // ***************************Практика************************* \\
 // Потрібно створити розмітку з картками автомобілів.
 // Для створення розмітки використовуй масив cars.
-
-// Варіант-1
-// Створи розмітку використовуючи метод createElement
-
-// Варіант-2
-// Створи розмітку використовуючи приклад шаблонної розмітки
+// Вар-1 - Створи розмітку використовуючи метод createElement
+// Вар-2 - Створи розмітку використовуючи приклад шаблонної
+//розмітки
 
 // const cars = [
 //     {
-//         id: 1,
-//         model: "Honda",
-//         type: "Civic",
-//         price: 12000,
+//         id: 1, model: "Honda", type: "Civic", price: 12000,
 //         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU",
 //     },
 //     {
-//         id: 2,
-//         model: "Audi",
-//         type: "Q7",
-//         price: 40000,
+//         id: 2, model: "Audi", type: "Q7", price: 40000,
 //         img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
 //     },
 //     {
-//         id: 3,
-//         model: "BMW",
-//         type: "5 series",
-//         price: 9000,
+//         id: 3, model: "BMW", type: "5 series", price: 9000,
 //         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
 //     },
 //     {
-//         id: 4,
-//         model: "Honda",
-//         type: "Accord",
-//         price: 20000,
+//         id: 4, model: "Honda", type: "Accord", price: 20000,
 //         img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
 //     },
 //     {
-//         id: 5,
-//         model: "Volvo",
-//         type: "XC60",
-//         price: 7000,
+//         id: 5, model: "Volvo", type: "XC60", price: 7000,
 //         img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
 //     },
 // ];
-
 // *******Варіант-1******* \\
-
-// const list = document.querySelector(".js-list");
+// const list = document.querySelector('.js-list');
 // function createMarkup(arr) {
-//   return arr.map(({ id, model, type, price, img }) => {
-//     const liEL = document.createElement("li");
-//     const imgEl = document.createElement("img");
-//     const h2EL = document.createElement("h2");
-//     const h3El = document.createElement("h3");
-//     const pEl = document.createElement("p");
+//     return arr.map(({ id, model, type, price, img }) => {
+//         const liEl = document.createElement('li');
+//         const imgEl = document.createElement('img')
+//         const h2El = document.createElement('h2');
+//         const h3El = document.createElement('h3');
+//         const pEl = document.createElement('p');
 
-//     liEL.setAttribute("data-car-id", id);
+//         // set castomAttributerId
+//         liEl.setAttribute('data-car-id', id);
+//         console.log(liEl); //<li data-car-id="1"></li>
 
-//     imgEl.src = img;
-//     imgEl.alt = model;
-//     imgEl.style.width = "300px";
+//         //attributes img
+//         imgEl.src = img;
+//         imgEl.alt = model;
+//         imgEl.style.width = '300px';
 
-//     h2EL.textContent = model;
-//     h3El.textContent = type;
-//     pEl.textContent = price;
+//         //textContent
+//         h2El.textContent = model;
+//         h3El.textContent = type;
+//         pEl.textContent = price;
 
-//     liEL.append(imgEl, h2EL, h3El, pEl);
-//     return liEL;
-//   });
+//         liEl.append(imgEl, h2El, h3El, pEl);
+//         return liEl;
+//     });
 // }
-// list.append(...createMarkup(cars))
+// list.append(...createMarkup(cars));
+
+//1-2
+// const list = document.querySelector('.js-list');
+// function createMarkup(arr) {
+//     const markUp = arr.map(({ id, model, type, price, img }) => {
+//         const liEl = document.createElement('li');
+//         const imgEl = document.createElement('img')
+//         const h2El = document.createElement('h2');
+//         const h3El = document.createElement('h3');
+//         const pEl = document.createElement('p');
+
+//         // set castomAttributerId
+//         liEl.setAttribute('data-car-id', id);
+//         console.log(liEl); //<li data-car-id="1"></li>
+
+//         //attributes img
+//         imgEl.src = img;
+//         imgEl.alt = model;
+//         imgEl.style.width = '300px';
+
+//         //textContent
+//         h2El.textContent = model;
+//         h3El.textContent = type;
+//         pEl.textContent = price;
+
+//         liEl.append(imgEl, h2El, h3El, pEl);
+//         return liEl;
+//     });
+
+//     list.append(...markUp);
+// }
+// createMarkup(cars);
 
 // *******Варіант-2******* \\
-// const list = document.querySelector(".js-list");
-
+// const list = document.querySelector('.js-list');
 // function createMarkup(arr) {
-//     return arr.map(
-//         ({ id, model, type, price, img }) => `
-//     <li data-car-id="${id}">
-//         <img src="${img}" alt="${model}" width="300">
-//         <h2>${model}</h2>
-//         <h3>${type}</h3>
-//         <p>${price}</p>
-//     </li>
-// `).join('')
+//     return arr.map(({ id, model, type, price, img }) =>
+//         `<li data-car-id="${id}">
+//             <img src="${img}" alt="${model}" width="300">
+//             <h2>${model}</h2>
+//             <h3>$${type}</h3>
+//             <p>${price}</p>
+//         </li>`
+//     ).join('');
+// }
+// list.insertAdjacentHTML('afterbegin', createMarkup(cars));
+
+// const list = document.querySelector('.js-list');
+// const createMarkup = cars.map(({ id, model, type, price, img }) =>
+//     `<li data-car-id="${id}">
+//             <img src="${img}" alt="${model}" width="300">
+//             <h2>${model}</h2>
+//             <h3>$${type}</h3>
+//             <p>${price}</p>
+//         </li>`
+// ).join('');
+// list.insertAdjacentHTML('afterbegin', createMarkup);
+
+// Questions and
+// const root = document.querySelector(':root');
+// console.log(root);
+
+//              m7-2 mentor
+
+// *********    Подія сlick  ********* \\
+
+// const clickMe = document.querySelector(".js-click");
+// const box = document.querySelector(".js-box");
+
+// clickMe.addEventListener("click", handlerClick);
+//2
+// box.addEventListener("click", handlerClick);
+
+// function handlerClick(event) {
+//     // console.log(event); //currentTarget:null
+//     // console.log(event.currentTarget); //<button class="js-click">Click me</button>
+
+//     // console.log('before', event.currentTarget);
+//     // setTimeout(() => {
+//     //     console.log('after', event.currentTarget);
+//     // }, 1000)
+//     //2
+//     // const current = event.currentTarget;
+//     // console.log('before', current);
+//     // setTimeout(() => {
+//     //     console.log('after', current);
+//     // }, 1000)
+//     //3
+//     const current = event.currentTarget;
+//     console.log('before', clickMe);
+//     setTimeout(() => {
+//         console.log('after', clickMe);
+//     }, 1000)
 // }
 
-// list.insertAdjacentHTML('afterbegin', createMarkup(cars))
+// Натискаючи на кнопку "Click me" червоний квадратик зміщуватись на 50px по діагоналі
+// const clickMe = document.querySelector(".js-click");
+// const box = document.querySelector(".js-box");
+// let step = 0;
+// clickMe.addEventListener("click", handlerClick);
+// function handlerClick() {
+//     step += 50;
+//     // console.log(step);
+//     box.style.marginTop = `${step}px`;
+//     box.style.marginLeft = `${step}px`;
+// }
+
+// *********     Подія input     ********* \\
+
+// Виводь в консоль все що користувач вводить в input
+
+// const inputUserName = document.querySelector('.js-user-name');
+// inputUserName.addEventListener('input', handlerInput);
+// function handlerInput(evt) {
+//     // console.log(evt.currentTarget);
+//     // console.dir(evt.currentTarget);
+//     console.dir(evt.currentTarget.value);
+// }
+
+// *********Подія blur********* \\
+
+// Користувач вводить в input своє ім'я після втрати фокусу отримує alert з вітальним повідомленням
+// const inputUserName = document.querySelector(".js-user-name");
+// inputUserName.addEventListener("blur", handlerInput);
+// function handlerInput(evt) {
+//       console.dir(evt.currentTarget.value);
+// }
+
+// *********   Подія  focus   ********* \\
+
+// const inputUserName = document.querySelector(".js-user-name");
+// inputUserName.addEventListener("focus", handlerInput);
+// function handlerInput(evt) {
+//     console.dir(evt.currentTarget.value);
+// }
+
+// *********  Подія submit   ********* \\
+// Опрацюй форму та збери фідбек користувача в об'єкт
+//no change quantity elements form's
+// const form = document.querySelector('.js-form');
+// form.addEventListener('submit', handlerGetComment);
+// function handlerGetComment(evt) {
+//     evt.preventDefault();
+//     // console.dir(evt.currentTarget);
+//     // // console.log('click');
+
+//     //1
+
+//     // const { email, comment, password } = evt.currentTarget.elements;
+//     // console.log(email.value);
+//     // console.log(comment.value);
+//     // console.log(password.value);
+
+//     // const data = {
+//     //     email: email.value,
+//     //     password: password.value,
+//     //     comment: comment.value
+//     // };
+//     // console.log(data);
+
+//     //2
+//     const formData = new FormData(evt.currentTarget);
+//     console.log(formData); //{}
+//     const data = {};
+//     formData.forEach((value, key) => data[key] = value);
+//     console.log(data);
+// }
+
+// *********  Подія keydown / keyup / keypress   ********* \\
+
+// document.addEventListener("keydown", handlerKey);
+// Подія keydown
+// function handlerKey(evt) {
+// console.log(evt);
+// console.log(evt.code);
+
+// if (evt.code === 'Escape') {
+//     console.log('Close modal window 😂');
+// } else {
+//     console.log('Miss click 😱');
+// }
+
+// switch (evt.code) {
+//     case 'Escape':
+//         console.log('Close modal window 😂');
+//     case 'KeyA':
+//         console.log('Miss click 😱');
+
+// }
+// }
+
+// *********  Обробка комбінацій клавіш   ********* \\
+// document.addEventListener("keydown", handlerKey);
+
+// function handlerKey(evt) {
+//     if (evt.ctrlKey && evt.code === 'KeyC') {
+//         evt.preventDefault();
+//         console.log('No copypaste');
+
+//     }
+// }
+
+// ***************Практика************** \\
+// Реалізуй пошук автомобілів по сайту
+// Користувач потрапляє на сайт і одразу бачить форму для пошуку і картки всіх
+// автомобілів(масив cars)
+// Користувач може ввести в форму назву Марки або Моделі авто і в тегу селект
+// обрати що він ввів Марку або Модель(https://prnt.sc/PkkZZRy_ggtT)
+// Після натискання кнопки пошуку (сабміт форми) відмалюй авто які збігаються з
+//критеріями пошуку
+
+const cars = [
+    {
+        id: 1,
+        car: 'Honda',
+        type: 'Civic',
+        price: 12000,
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+    },
+    {
+        id: 2,
+        car: 'Audi',
+        type: 'Q7',
+        price: 40000,
+        img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+    },
+    {
+        id: 3,
+        car: 'BMW',
+        type: '5 series',
+        price: 9000,
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+    },
+    {
+        id: 4,
+        car: 'Honda',
+        type: 'Accord',
+        price: 20000,
+        img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+    },
+    {
+        id: 5,
+        car: 'Volvo',
+        type: 'XC60',
+        price: 7000,
+        img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+    },
+];
+const elements = {
+    form: document.querySelector(".js-form"),
+    list: document.querySelector(".js-list"),
+};
+
+elements.list.insertAdjacentHTML("afterbegin", createMarkup(cars));
+elements.form.addEventListener("submit", handlerSearch);
+
+function handlerSearch(evt) {
+    evt.preventDefault();
+
+    const { options, query } = evt.currentTarget.elements;
+
+    const result = cars.filter((item) =>
+        item[options.value].toLowerCase().includes(query.value.toLowerCase())
+    );
+
+    elements.list.innerHTML = createMarkup(result);
+}
+
+function createMarkup(arr) {
+    return arr
+        .map(
+            ({ car, type, price, img, id }) => `
+  <li data-car-id="${id}" class="car-card ">
+    <img src="${img}" alt="${car}" class="car-image">
+    <h2 class="car-title">${car}</h2>
+    <h3 class="car-type">${type}</h3>
+    <span class="car-price">${price}</span>
+  </li>
+  `
+        )
+        .join("");
+}
