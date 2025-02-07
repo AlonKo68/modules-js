@@ -382,29 +382,26 @@
 
 // console.dir(titleId);  //h1#title.title.js-title - object
 
-// ****   Пошук HTML елементів за доп. querySelectorAll    **** \\
-
+//    ****     Пошук HTML елементів за доп. querySelectorAll    **** \\
 // const itemSelector = document.querySelectorAll('li')
 // console.log(itemSelector);  //NodeList(3) [li.js-item, li.js-item, li.js-item]
+// itemSelector.forEach((elem) => console.log(elem.textContent));
 
 // const itemClass = document.querySelectorAll('.js-item');
 // console.log(itemClass);  //NodeList(3) [li.js-item, li.js-item, li.js-item]
 
-// Перетворення колекції(псевдомасив) до масиву
-
+//     ****  Перетворення колекції(псевдомасив) до масиву ****
 // console.log(Array.from(itemSelector));  //(3) [li.js-item, li.js-item, li.js-item]
 // console.log([...itemClass]); //(3)[li.js - item, li.js - item, li.js - item]
 
-// ***   Створення HTML елементів за допомогою createElement()  *** \\
-
+//   ***   Створення HTML елементів за допомогою createElement()  *** \\
 // const list = document.querySelector(".js-list");
 
 // const li = document.createElement("li");
 // const h2 = document.createElement("h2");
-
 // const h3 = document.createElement("h3");
 
-// //      Властивість textContent
+//      Властивість textContent
 // h2.textContent = "Hello world";
 // console.log(h2);  //<h2>Hello world</h2>
 
@@ -414,25 +411,31 @@
 // li.append(h2); //h2 in li
 // list.append(li); //li in list end
 // console.log(list); //after I ❤ JS
+// console.log(list.children); //[li, li]
 
 // li.append(h2);
 // list.prepend(li);
 // console.log(list); //before I ❤ JS
 
 // li.append(h2, h3);
+// console.log(li);
 
 // **    Створення HTML елементів за допомогою шаблонної розмітки   ** \\
-
-// const list = document.querySelector(".js-list");
+// const list = document.querySelector('.js-list');
+// const li = `<li><h2>Hello word</h2></li>`
+// console.log(li);
+//or
 // const title = 'Hello world';
 // const li = `<li> <h2>${title}</h2> </li>`;
 
+//введение в ДОМ дерево (Метод insertAdjacentHTML, Властивість innerHTML)
 // Метод insertAdjacentHTML
-
+// list.insertAdjacentHTML('afterbegin', li);
 // list.insertAdjacentHTML('beforeend', li);
+// list.insertAdjacentHTML('beforebegin', li);
+// list.insertAdjacentHTML('afterend', li);
 // console.log(list);
 
-// list.insertAdjacentHTML("afterend", li);
 //or
 // const list = document.querySelector(".js-list");
 // const title = 'Hello world';
@@ -456,7 +459,6 @@
 // console.log(titleId);  //null
 
 //   * Метод getElementsByClassName(), getElementsByTagName()
-
 // const list = document.getElementsByClassName('js-list');
 // console.log(list); //HTMLCollection [h1#title.title.js-title, title: h1#title.title.js-title]
 
@@ -483,6 +485,7 @@
 
 // const list = document.querySelector('.js-list')
 // console.log(list); //HTMLCollection[li]
+// console.log(list.children);
 
 // ***  Стилізація за допомогою властивості style    **** \\
 
@@ -572,6 +575,7 @@
 //         img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
 //     },
 // ];
+
 // *******Варіант-1******* \\
 // const list = document.querySelector('.js-list');
 // function createMarkup(arr) {
@@ -663,19 +667,20 @@
 // const root = document.querySelector(':root');
 // console.log(root);
 
-//              m7-2 mentor
+//                                                   m7-2 mentor
 
 // *********    Подія сlick  ********* \\
 
-// const clickMe = document.querySelector(".js-click");
+// const button = document.querySelector(".js-click");
 // const box = document.querySelector(".js-box");
+// button.addEventListener("click", handlerClick);
 
-// clickMe.addEventListener("click", handlerClick);
 //2
 // box.addEventListener("click", handlerClick);
 
 // function handlerClick(event) {
 //     // console.log(event); //currentTarget:null
+//     // console.log(event.target);
 //     // console.log(event.currentTarget); //<button class="js-click">Click me</button>
 
 //     // console.log('before', event.currentTarget);
@@ -711,7 +716,6 @@
 // *********     Подія input     ********* \\
 
 // Виводь в консоль все що користувач вводить в input
-
 // const inputUserName = document.querySelector('.js-user-name');
 // inputUserName.addEventListener('input', handlerInput);
 // function handlerInput(evt) {
@@ -726,7 +730,7 @@
 // const inputUserName = document.querySelector(".js-user-name");
 // inputUserName.addEventListener("blur", handlerInput);
 // function handlerInput(evt) {
-//       console.dir(evt.currentTarget.value);
+//     console.dir(evt.currentTarget.value);
 // }
 
 // *********   Подія  focus   ********* \\
@@ -744,11 +748,11 @@
 // form.addEventListener('submit', handlerGetComment);
 // function handlerGetComment(evt) {
 //     evt.preventDefault();
-//     // console.dir(evt.currentTarget);
+//     console.log('submit');
 //     // // console.log('click');
+//     console.dir(evt.currentTarget);
 
 //     //1
-
 //     // const { email, comment, password } = evt.currentTarget.elements;
 //     // console.log(email.value);
 //     // console.log(comment.value);
@@ -849,26 +853,13 @@ const cars = [
         img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
     },
 ];
+
 const elements = {
     form: document.querySelector(".js-form"),
     list: document.querySelector(".js-list"),
 };
-
-elements.list.insertAdjacentHTML("afterbegin", createMarkup(cars));
-elements.form.addEventListener("submit", handlerSearch);
-
-function handlerSearch(evt) {
-    evt.preventDefault();
-
-    const { options, query } = evt.currentTarget.elements;
-
-    const result = cars.filter((item) =>
-        item[options.value].toLowerCase().includes(query.value.toLowerCase())
-    );
-
-    elements.list.innerHTML = createMarkup(result);
-}
-
+console.log(elements.list);
+console.log(elements.form);
 function createMarkup(arr) {
     return arr
         .map(
@@ -879,7 +870,19 @@ function createMarkup(arr) {
     <h3 class="car-type">${type}</h3>
     <span class="car-price">${price}</span>
   </li>
-  `
-        )
-        .join("");
+  ` ).join("");
+}
+elements.list.insertAdjacentHTML("afterbegin", createMarkup(cars));
+
+elements.form.addEventListener("submit", handlerSearch);
+function handlerSearch(evt) {
+    evt.preventDefault();
+
+    const { options, query } = evt.currentTarget.elements;
+    console.log(options.value);
+    const result = cars.filter((item) =>
+        item[options.value].toLowerCase().includes(query.value.toLowerCase())
+    );
+
+    elements.list.innerHTML = createMarkup(result);
 }

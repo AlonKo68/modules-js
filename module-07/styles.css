@@ -32,6 +32,7 @@ button {
 } */
 
 /* m7-2 mentor */
+
 /* Подія сlick  */
 /* .box {
   width: 100px;
@@ -40,7 +41,7 @@ button {
 } */
 
 /* Подія submit  */
-.feedback-form {
+/* .feedback-form {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -76,7 +77,8 @@ button {
 
 .form-button:hover {
   background-color: #0056b3;
-}
+} */
+
 /* practice */
 .car-search {
   max-width: 450px;
