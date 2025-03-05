@@ -446,88 +446,410 @@
 // Для реалізації модального вікна використай бібліотеку 
 // basicLightbox (https://github.com/electerious/basicLightbox)
 
-const products = [
-    {
-        id: 1, img: "https://www.vodafone.ua/shop/media/wysiwyg/novosti/Capture_1_large.JPG",
-        name: "Монітор", price: 3000,
-        description: "23-дюймовий монітор з Full HD роздільною здатністю.",
-    },
-    {
-        id: 2, img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzWqRMI3HQiDfICHAmbArmaP4uOOIjfz0sDITv0dfkpb0mbbgX",
-        name: "Ноутбук", price: 20000,
-        description: "Легкий та потужний ноутбук з 15-дюймовим дисплеєм та SSD.",
-    },
-    {
-        id: 3, img: "https://cdn.27.ua/799/66/39/6841913_1.jpeg",
-        name: "Смартфон", price: 8000,
-        description: "Оснащений потрійною камерою та багатоядерним процесором.",
-    },
-    {
-        id: 4, img: "https://cdn.27.ua/799/b6/16/4371990_1.jpeg",
-        name: "Планшет", price: 12000,
-        description: "10-дюймовий планшет з високою продуктивністю та Retina дисплеєм.",
-    },
-];
+// const products = [
+//     {
+//         id: 1, img: "https://www.vodafone.ua/shop/media/wysiwyg/novosti/Capture_1_large.JPG",
+//         name: "Монітор", price: 3000,
+//         description: "23-дюймовий монітор з Full HD роздільною здатністю.",
+//     },
+//     {
+//         id: 2, img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzWqRMI3HQiDfICHAmbArmaP4uOOIjfz0sDITv0dfkpb0mbbgX",
+//         name: "Ноутбук", price: 20000,
+//         description: "Легкий та потужний ноутбук з 15-дюймовим дисплеєм та SSD.",
+//     },
+//     {
+//         id: 3, img: "https://cdn.27.ua/799/66/39/6841913_1.jpeg",
+//         name: "Смартфон", price: 8000,
+//         description: "Оснащений потрійною камерою та багатоядерним процесором.",
+//     },
+//     {
+//         id: 4, img: "https://cdn.27.ua/799/b6/16/4371990_1.jpeg",
+//         name: "Планшет", price: 12000,
+//         description: "10-дюймовий планшет з високою продуктивністю та Retina дисплеєм.",
+//     },
+// ];
 // // 1 Створи картки з товарами на основі масиву
-const list = document.querySelector('.js-products');
-function createMarkup(arr) {
-    return arr.map(({ id, img, name, price, }) =>
-        `<li class="item js-item" data-product-id="${id}">
-            <img src="${img}" alt="${name}">
-            <h2>${name}</h2>
-            <p>Ціна: ${price} грн</p>
-        </li>`
-    ).join("")
-}
-list.insertAdjacentHTML('afterbegin', createMarkup(products))
+// const list = document.querySelector('.js-products');
+// function createMarkup(arr) {
+//     return arr.map(({ id, img, name, price, }) =>
+//         `<li class="item js-item" data-product-id="${id}">
+//             <img src="${img}" alt="${name}">
+//             <h2>${name}</h2>
+//             <p>Ціна: ${price} грн</p>
+//         </li>`
+//     ).join("")
+// }
+// list.insertAdjacentHTML('afterbegin', createMarkup(products))
 
-list.addEventListener('click', handlerGetProduct);
-function handlerGetProduct(evt) {
-    if (evt.currentTarget === evt.target) {
-        return;
-    }
-    // console.log(evt.target);
-    // console.log(evt.currentTarget);
-    const parent = evt.target.closest('.js-item');
-    // console.log(parent);
+// list.addEventListener('click', handlerGetProduct);
+// function handlerGetProduct(evt) {
+//     if (evt.currentTarget === evt.target) {
+//         return;
+//     }
+//     // console.log(evt.target);
+//     // console.log(evt.currentTarget);
+//     const parent = evt.target.closest('.js-item');
+//     // console.log(parent);
 
-    const currentId = Number(parent.dataset.productId);
-    // console.log(currentId);
-    const currentProduct = products.find(({ id }) => id === currentId);
-    // console.log(currentProduct);
+//     const currentId = Number(parent.dataset.productId);
+//     // console.log(currentId);
+//     const currentProduct = products.find(({ id }) => id === currentId);
+//     // console.log(currentProduct);
 
-    // library modalwindow
-    const instance = basicLightbox.create(`
-       <div class="modal">
-          <img src="${currentProduct.img}" alt="${currentProduct.name}">
-          <h2>${currentProduct.name}</h2>
-          <h3>${currentProduct.price}</h3>
-          <p>${currentProduct.description}</p>
-        </div>
-    `);
-    instance.show();
-    instance.show(() => console.log('lightbox now visible'));
-}
+//     // library modalwindow
+//     const instance = basicLightbox.create(`
+//        <div class="modal">
+//           <img src="${currentProduct.img}" alt="${currentProduct.name}">
+//           <h2>${currentProduct.name}</h2>
+//           <h3>${currentProduct.price}</h3>
+//           <p>${currentProduct.description}</p>
+//         </div>
+//     `);
+//     instance.show();
+//     // instance.show(() => console.log('lightbox now visible'));
+// }
 
-// library
-console.log(basicLightbox);
-
-
-
-
-
-
+// // library
+// console.log(basicLightbox);
 
 
 // list.append()
 // list.appendChild()
 
 // const fragment = document.createDocumentFragment();
-
 // fragment.appendChild(document.createElement("li"));
-
-
 // console.log(fragment)
-
 // list.appendChild(fragment)
 
+
+
+//                          Mentor    M8-2
+// kaxut
+//1
+// const user = { email: "mango@gmail.com", age: 20, };
+// const { username } = user;
+// console.log(username); //undefined
+
+//2
+// const { username = "User" } = user;
+// console.log(username); //User
+
+//3
+// const { email: userEmail } = user;
+// console.log(username); //Error
+
+//4
+// const user = {
+//     email: "mango@gmail.com", age: 20,
+//     location: { lan: 10, lon: 20, },
+// };
+// const { location: { lan, lon } } = user;
+// console.log(lan, lon); //10 20
+
+//5 
+// function foo({ username }) {
+//     console.log(username); //undefined
+// }
+// foo({ name: "Jacob" });
+
+//6
+// function foo({ user: username }) {
+//     console.log(user); //Error
+// }
+// foo({ user: "Jacob" });
+
+//7
+// function foo(params = {}) {
+//     console.log(params); //{}
+// }
+// foo();
+
+//8
+// function foo(params = {}) {
+//     console.log(params); //{ user: "Jacob" }
+// }
+// foo({ user: "Jacob" });
+
+//9
+// function foo({ username }) {
+//     console.log(username); //Error
+// }
+// foo();
+
+//10
+// function foo({ username } = {}) {
+//     console.log(username); //undefined
+// }
+// foo();
+
+// ******************************Lazy Loading****************************** \\
+// Тестовий масив для lazy-loading
+// const cats = [
+//     "https://i.ytimg.com/vi/iKA6ZXpGcGQ/maxresdefault.jpg",
+//     "https://i.natgeofe.com/n/46b07b5e-1264-42e1-ae4b-8a021226e2d0/domestic-cat_thumb_square.jpg",
+//     "https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg",
+//     "https://i.guim.co.uk/img/media/941093798b256e5d1aa6246a08824bc86f62a31f/0_0_5000_3000/master/5000.jpg?width=1300&quality=85&fit=max&s=ea672fb16df8634901283252059baaf8",
+//     "https://nypost.com/wp-content/uploads/sites/2/2022/06/reddit-cats-judging-looks-00.jpg?quality=75&strip=all",
+//     "https://gdb.voanews.com/09690000-0a00-0242-5408-08da76ebde16_cx0_cy3_cw99_w1200_r1.jpg",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCK8yYjQ6igjrAJyCyXUwV6U7RDkLVc4FVnQ&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWEQxVHz2ZzUdIKINgA-LvmuZgoady4hu4hQ&usqp=CAU",
+//     "https://e3.365dm.com/22/07/768x432/skynews-cats-pet_5846440.jpg?20220726201324",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4xXPTgr5Lug8qU_akXp2oC_4m5w3FoAvx_Q&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnB4if5HpwDvEqkgBShHrRvbwYCya8vzB86g&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWEQxVHz2ZzUdIKINgA-LvmuZgoady4hu4hQ&usqp=CAU",
+//     "https://e3.365dm.com/22/07/768x432/skynews-cats-pet_5846440.jpg?20220726201324",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4xXPTgr5Lug8qU_akXp2oC_4m5w3FoAvx_Q&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnB4if5HpwDvEqkgBShHrRvbwYCya8vzB86g&usqp=CAU",
+//     "https://assets.globalwildlife.org/m/3b6039a74fd067ea/webimage-Tigrinia.jpg",
+//     "https://irs.www.warnerbros.com/gallery-v2-jpeg/cats__dogs_photo_12-14571309.jpg",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyGk9Ds3bdd4B404EcoMDrVUKnU5u9KABOg&usqp=CAU",
+// ];
+
+// const list = document.querySelector('.js-cats');
+// console.log(list);
+// const markup = cats.map((src) =>
+//     `<li class="">
+//         <img src="${src}" alt="cat" width="300" height="200" loading="lazy">
+//     </li>`).join('');
+// list.insertAdjacentHTML('afterbegin', markup);
+// console.log(cats.length); //18
+
+
+// *****************************  Throttle & Debounce   ***************************** \\
+// library https://lodash.com/
+// console.log(_); //library
+
+// https://bundlephobia.com/
+// console.log(_); // Error
+// console.log(debounce); //metod debounce
+// console.log(throttle);
+
+
+const inputRef = document.querySelector(".js-search");
+// inputRef.addEventListener('input', handlerSearch);
+// inputRef.addEventListener('input', _.throttle(handlerSearch, 1000));
+// function handlerSearch(evt) {
+//     // console.log(evt.currentTarget); //  <input type="text" class="js-search">
+//     // console.log(evt.currentTarget.value);
+//     console.log(evt.target.value);
+// }
+
+// inputRef.addEventListener('input', _.throttle(handlerSearch, 1000, {
+//     loading: true,
+//     trailing: false,
+// }));
+// function handlerSearch(evt) {
+//     console.log(evt.target.value);
+// }
+
+// inputRef.addEventListener('input', _.debounce(handlerSearch, 1000));
+// function handlerSearch(evt) {
+//     // console.log(evt.currentTarget.value); //Error
+//     console.log(evt.target.value); //Hello world
+// }
+
+// inputRef.addEventListener(
+//     "input",
+//     _.debounce(handlerSearch, 1000, {
+//         leading: true,
+//         trailing: true,
+//         maxWait: 400,
+//     })
+// );
+
+// function handlerSearch(evt) {
+//     console.log(evt.target.value);
+// }
+
+// ****************       Практика         ************* \\
+//Потрібно створити гру хрестики нулики.
+//Відмалюй розмітку ігрового поля для контейнера з класом 
+//"content", для кожної клітинки застосуй клас "item"
+//Реалізуй делегування подій на ігровому полі для можливості ходу.
+//Скріпт має самостійно визначати переможця гри та виводити 
+//модальне вікно з переможцем (X/O)
+//Для історії ходів наших гравців (Х/О) потрібно щоб кожна 
+//клітинка ігрового поля містила дата атрибут id
+//Створи скріпт для перевірки виграшної комбінації, список всіх 
+//можливих виграшних комбінацій знаходиться в масиві combination.
+//Для виводу модального вікна застосуй бібліотеку basiclightbox
+//Після визначення переможця обов'язково підготуй ігрове поле 
+//для наступної гри
+
+const combination = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [1, 5, 9],
+    [3, 5, 7],
+    [3, 6, 9],
+];
+
+const contentRef = document.querySelector('.js-content');
+// let markup = "";
+let player = "X"
+const historyX = [];
+const historyO = [];
+
+// for (let i = 1; i <= 9; i++) {
+//     markup += `<li class="item" data-id="${i}"></li>`;
+// }
+// contentRef.insertAdjacentHTML('afterbegin', markup);
+
+function createMarkup() {
+    let markup = "";
+    for (let i = 1; i <= 9; i += 1) {
+        markup += `<li class="item" data-id="${i}"></li>`;
+    }
+    return markup;
+}
+contentRef.insertAdjacentHTML('afterbegin', createMarkup());
+
+contentRef.addEventListener('click', handlerStep);
+function handlerStep(evt) {
+    // console.log(evt.currentTarget);
+    // console.log(evt.target);
+    if (evt.target.textContent !== "") {
+        return;
+    }
+    const id = Number(evt.target.dataset.id);
+    // console.log(id);
+    const minStepCount = 3;
+    let isWinner = false;
+
+    evt.target.textContent = player;
+    if (player === "X") {
+        historyX.push(id);
+        // checkWinner(historyX);
+        isWinner = historyX.length >= minStepCount
+            ? checkWinner(historyX) : false;
+        // player = "0";
+    } else {
+        historyO.push(id);
+        // checkWinner(historyO);
+        isWinner = historyO.length >= minStepCount
+            ? checkWinner(historyO) : false;
+        // player = "X";
+    }
+    // evt.target.textContent = player;
+
+    // console.log(historyX);
+    // console.log(historyO);
+
+    // console.log(isWinner);
+    if (isWinner) {
+        // console.log(`Winner ${evt.target.textContent}`);
+        const instance = basicLightbox.create(`
+            <div class="box">
+            <h2>Player - ${player} is winner</h2>
+            </div>
+            `);
+        instance.show();
+        resetGame();
+        return;
+    }
+    const isDraw = [...contentRef.children].every(item =>
+        item.textContent !== "");
+    if (isDraw) {
+        const instance = basicLightbox.create(`
+            <div class="box">
+            <h2>Is draw</h2>
+            </div>
+            `);
+        instance.show();
+        resetGame();
+        return;
+    }
+    player = player === "X" ? "0" : "X";
+}
+
+function checkWinner(arr) {
+    return combination.some((item) =>
+        item.every((id) => arr.includes(id)));
+}
+
+function resetGame() {
+    contentRef.innerHTML = createMarkup();
+    player = "X";
+    historyO.splice(0);
+    historyX.splice(0);
+}
+
+
+// const contentRef = document.querySelector(".js-content");
+// const historyX = [];
+// const historyO = [];
+
+// let player = "X";
+
+// contentRef.addEventListener("click", handlerStep);
+// contentRef.insertAdjacentHTML("afterbegin", createMarkup());
+// function handlerStep(evt) {
+//     if (evt.target.textContent !== "") {
+//         return;
+//     }
+
+//     const id = Number(evt.target.dataset.id);
+//     const minStepCount = 3;
+//     let isWinner = false;
+
+//     evt.target.textContent = player;
+
+//     if (player === "X") {
+//         historyX.push(id);
+//         isWinner = historyX.length >= minStepCount ? checkWinner(historyX) : false;
+//     } else {
+//         historyO.push(id);
+//         isWinner = historyO.length >= minStepCount ? checkWinner(historyO) : false;
+//     }
+
+//     if (isWinner) {
+//         const instance = basicLightbox.create(`
+//         <div class="box">
+//             <h2>Player - ${player} is winner</h2>
+//         </div>
+//     `);
+//         instance.show();
+//         resetGame();
+//         return;
+//     }
+
+//     const isDraw = [...contentRef.children].every(
+//         (item) => item.textContent !== ""
+//     );
+
+//     //   const isDrawSecond = historyX.length + historyO.length === 9
+
+//     if (isDraw) {
+//         const instance = basicLightbox.create(`
+//         <div class="box">
+//             <h2>😰 Is Drow</h2>
+//         </div>
+//     `);
+//         instance.show();
+//         resetGame();
+//         return;
+//     }
+//     player = player === "X" ? "O" : "X";
+// }
+
+// function checkWinner(arr) {
+//     return combination.some((item) => item.every((id) => arr.includes(id)));
+// }
+
+// function resetGame() {
+//     contentRef.innerHTML = createMarkup();
+//     player = "X";
+//     historyO.splice(0);
+//     historyX.splice(0);
+// }
+// function createMarkup() {
+//     let markup = "";
+//     for (let i = 1; i <= 9; i += 1) {
+//         markup += `<li class="item" data-id="${i}"></li>`;
+//     }
+
+//     return markup;
+// }

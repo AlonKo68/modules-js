@@ -125,8 +125,7 @@
 } */
 
 /* Практика */
-
-ul {
+/* ul {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -194,4 +193,44 @@ ul {
 .modal p {
   font-size: 1rem;
   margin: 0;
+} */
+
+/*    Mentor    M8-2 */
+
+/* Практика */
+.container {
+  display: flex;
+  margin: 100px 50px 50px 50px;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-template-rows: repeat(3, 50px);
+  width: 150px;
+  margin: 0 auto;
+  border: 2px solid gray;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  border: 2px solid gray;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.1s;
+}
+
+.item:hover {
+  background-color: #f1f1f10c;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  padding: 30px;
 }
